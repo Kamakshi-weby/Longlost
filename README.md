@@ -71,7 +71,27 @@ My kind of world❤️
       font-size: 24px;
       cursor: pointer;
     }
-  </style>
+  h1, h2, h3 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #6a1b9a; /* Deep lavender color */
+}
+
+h1::after, h2::after, h3::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background-color: #ff69b4; /* Pink underline */
+  left: 20%;
+  bottom: 0;
+  border-radius: 2px;
+}
+</style>
 </head>
 <body>
   <header>
