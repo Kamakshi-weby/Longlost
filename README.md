@@ -141,7 +141,7 @@ and still I know, the mirror reflects the problem within me, cause yes! the prob
     </div>
     <div class="blog-entry">
       <h3>🎨 Blog 2 </h3>
-      <p>I've been realising lately that everything I do will never be enough maybe or maybe...... I'M NOT ACTUALLY DOING ENOUGH 
+      <p>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH 
       
 Crying in silence, running through pain,
 Screaming inside like a voice in the rain.
