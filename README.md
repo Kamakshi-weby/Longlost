@@ -49,7 +49,7 @@ canvas {
   </style>
 </head>
 <body><header>
-  <h1>✨ Welcome to My Colourful Pastel World ✨</h1>
+  <h1>✨ Welcome to THE LOST WORLD ✨</h1>
   <nav>
     <a href="#about">About</a>
     <a href="#myself">Myself</a>
