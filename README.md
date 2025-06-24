@@ -177,6 +177,39 @@ h1::after, h2::after, h3::after {
     transform: translateY(0);
   }
 }
+#home {
+  background: linear-gradient(135deg, #ffe082, #ffca28); /* Warm yellow-orange gradient */
+  border-radius: 16px;
+  padding: 2em;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+  animation: bounceIn 0.7s ease-out;
+  transition: transform 0.3s;
+}
+
+#home:hover {
+  transform: scale(1.02);
+}
+
+#home h2 {
+  color: #bf360c; /* Deep warm orange */
+}
+
+#home p {
+  color: #4e342e;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 </head>
 <body>
