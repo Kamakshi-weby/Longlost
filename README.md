@@ -297,61 +297,68 @@ Know it’s not hate—it’s a heavy heart.
 I gave my all, yet here I stand,
 Still wondering if I was ever enough... in anyone’s hands......
 
-24/06/2025</p>
+24/06/2025</p>  </div>
+  </section>
     
-<div class="game-section">
+<section id="games">
+    <h2>🎮 Let's Play Some Games!</h2>
+
+    <div class="game-section">
       <h3>🎲 Dice Roller</h3>
       <button onclick="rollDice()">Roll Dice</button>
       <p id="diceResult"></p>
     </div>
 
-<div class="game-section">
-      <h3>🎲 Dice Roller</h3>
-      <button onclick="rollDice()">Roll Dice</button>
-      <p id="diceResult"></p>
+    <div class="game-section">
+      <h3>🧠 Memory Match</h3>
+      <div class="memory-grid" id="memoryMatch"></div>
     </div>
 
-     <div class="game-section">
+    <div class="game-section">
+      <h3>✊ Rock Paper Scissors</h3>
+      <div class="rps-buttons">
+        <button onclick="playRPS('rock')">✊</button>
+        <button onclick="playRPS('paper')">✋</button>
+        <button onclick="playRPS('scissors')">✌️</button>
+      </div>
+      <p id="rpsResult"></p>
+    </div>
+
+    <div class="game-section">
+      <h3>🎨 Drawing Pad</h3>
+      <canvas id="drawingCanvas" width="300" height="300"></canvas>
+    </div>
+
+    <div class="game-section">
+      <h3>🔤 Hangman (Word: CODE)</h3>
+      <p id="hangmanWord">_ _ _ _</p>
+      <input type="text" maxlength="1" id="hangmanInput">
+      <button onclick="guessLetter()">Guess</button>
+      <p id="hangmanMessage"></p>
+    </div>
+
+    <div class="game-section">
       <h3>🌀 Maze (Coming Soon)</h3>
       <p>A fun maze challenge will be added here!</p>
     </div>
-<div class="game-section">
-  <h3>🧠 Memory Match</h3>
-  <div class="memory-grid" id="memoryMatch"></div>
-</div>
 
+  </section>
 
-
-  </section>  <section id="thanks">
+  <section id="thanks">
     <h2>Thank You!</h2>
     <p>Thanks for visiting my blog. You're awesome! 🌟</p>
-  </section>  <footer>
-    <p>&copy; 2025 Playful Blog by You!</p>
-  </footer>  <script>
-    // Tic-Tac-Toe
-    const board = Array(9).fill(null);
-    let currentPlayer = 'X';
-    const ttt = document.getElementById('ticTacToe');
-    function drawBoard() {
-      ttt.innerHTML = '';
-      board.forEach((val, i) => {
-        const cell = document.createElement('div');
-        cell.className = 'cell';
-        cell.textContent = val || '';
-        cell.onclick = () => makeMove(i);
-        ttt.appendChild(cell);
-      });
-    }
-    function makeMove(i) {
-      if (!board[i]) {
-        board[i] = currentPlayer;
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        drawBoard();
-      }
-    }
-    drawBoard();
+  </section>
 
-    // Memory Match
+  <footer>
+    <p>&copy; 2025 Playful Blog by You!</p>
+  </footer>
+
+  <script>
+    function rollDice() {
+      const result = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('diceResult').textContent = `You rolled: ${result}`;
+    }
+
     const emojis = ['🍓','🍓','🍇','🍇','🍍','🍍','🍉','🍉'];
     let memoryState = [], flipped = [], matched = [];
     function drawMemory() {
@@ -359,17 +366,13 @@ Still wondering if I was ever enough... in anyone’s hands......
       matched = [];
       updateMemoryGrid();
     }
-    function updateMemoryGrid() {
+function updateMemoryGrid() {
       const grid = document.getElementById('memoryMatch');
       grid.innerHTML = '';
       memoryState.forEach((emoji, i) => {
         const card = document.createElement('div');
         card.className = 'memory-card';
-        if (matched.includes(i) || flipped.includes(i)) {
-          card.textContent = emoji;
-        } else {
-          card.textContent = '?';
-        }
+        card.textContent = matched.includes(i) || flipped.includes(i) ? emoji : '?';
         card.onclick = () => flipCard(i);
         grid.appendChild(card);
       });
@@ -380,9 +383,7 @@ Still wondering if I was ever enough... in anyone’s hands......
         updateMemoryGrid();
         if (flipped.length === 2) {
           setTimeout(() => {
-            if (memoryState[flipped[0]] === memoryState[flipped[1]]) {
-              matched.push(...flipped);
-            }
+            if (memoryState[flipped[0]] === memoryState[flipped[1]]) matched.push(...flipped);
             flipped = [];
             updateMemoryGrid();
           }, 500);
@@ -391,21 +392,16 @@ Still wondering if I was ever enough... in anyone’s hands......
     }
     drawMemory();
 
-    // Rock Paper Scissors
-    function playRPS(user) {
+   function playRPS(user) {
       const choices = ['rock', 'paper', 'scissors'];
       const computer = choices[Math.floor(Math.random() * 3)];
       let result = '';
       if (user === computer) result = "It's a tie!";
-      else if ((user === 'rock' && computer === 'scissors') ||
-               (user === 'paper' && computer === 'rock') ||
-               (user === 'scissors' && computer === 'paper')) {
-        result = 'You win! 🎉';
-      } else {
-        result = 'Computer wins! 🤖';
-      }
+      else if ((user === 'rock' && computer === 'scissors') || (user === 'paper' && computer === 'rock') || (user === 'scissors' && computer === 'paper')) result = 'You win! 🎉';
+      else result = 'Computer wins! 🤖';
       document.getElementById('rpsResult').textContent = `You: ${user}, Computer: ${computer} → ${result}`;
-    }
+   } 
+
     const canvas = document.getElementById('drawingCanvas');
     const ctx = canvas.getContext('2d');
     let drawing = false;
@@ -424,7 +420,7 @@ Still wondering if I was ever enough... in anyone’s hands......
     let guessed = ['_', '_', '_', '_'];
     function guessLetter() {
       const letter = document.getElementById('hangmanInput').value.toUpperCase();
-      document.getElementById('hangmanInput').value = '';
+document.getElementById('hangmanInput').value = '';
       let correct = false;
       for (let i = 0; i < targetWord.length; i++) {
         if (targetWord[i] === letter) {
@@ -433,6 +429,8 @@ Still wondering if I was ever enough... in anyone’s hands......
         }
       }
       document.getElementById('hangmanWord').textContent = guessed.join(' ');
-      document.getElementById('hangmanMessage').textContent = correct ? 'Correct!' : 'Try again!';}
-  </script></body>
+      document.getElementById('hangmanMessage').textContent = correct ? 'Correct!' : 'Try again!';
+    }
+  </script>
+</body>
 </html>
