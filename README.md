@@ -298,27 +298,29 @@ I gave my all, yet here I stand,
 Still wondering if I was ever enough... in anyone’s hands......
 
 24/06/2025</p>
+    
+<div class="game-section">
+      <h3>🎲 Dice Roller</h3>
+      <button onclick="rollDice()">Roll Dice</button>
+      <p id="diceResult"></p>
     </div>
-  </section>  <section id="games">
-    <h2>🎮 Let's Play Some Games!</h2><div class="game-section">
-  <h3>🟡 Tic-Tac-Toe</h3>
-  <div class="game-board" id="ticTacToe"></div>
-</div>
 
+<div class="game-section">
+      <h3>🎲 Dice Roller</h3>
+      <button onclick="rollDice()">Roll Dice</button>
+      <p id="diceResult"></p>
+    </div>
+
+     <div class="game-section">
+      <h3>🌀 Maze (Coming Soon)</h3>
+      <p>A fun maze challenge will be added here!</p>
+    </div>
 <div class="game-section">
   <h3>🧠 Memory Match</h3>
   <div class="memory-grid" id="memoryMatch"></div>
 </div>
 
-<div class="game-section">
-  <h3>✊ Rock Paper Scissors</h3>
-  <div class="rps-buttons">
-    <button onclick="playRPS('rock')">✊</button>
-    <button onclick="playRPS('paper')">✋</button>
-    <button onclick="playRPS('scissors')">✌️</button>
-  </div>
-  <p id="rpsResult"></p>
-</div>
+
 
   </section>  <section id="thanks">
     <h2>Thank You!</h2>
@@ -404,5 +406,33 @@ Still wondering if I was ever enough... in anyone’s hands......
       }
       document.getElementById('rpsResult').textContent = `You: ${user}, Computer: ${computer} → ${result}`;
     }
+    const canvas = document.getElementById('drawingCanvas');
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+    canvas.addEventListener('mousedown', () => drawing = true);
+    canvas.addEventListener('mouseup', () => drawing = false);
+    canvas.addEventListener('mousemove', e => {
+      if (drawing) {
+        ctx.fillStyle = '#000';
+        ctx.beginPath();
+        ctx.arc(e.offsetX, e.offsetY, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+
+    const targetWord = 'CODE';
+    let guessed = ['_', '_', '_', '_'];
+    function guessLetter() {
+      const letter = document.getElementById('hangmanInput').value.toUpperCase();
+      document.getElementById('hangmanInput').value = '';
+      let correct = false;
+      for (let i = 0; i < targetWord.length; i++) {
+        if (targetWord[i] === letter) {
+          guessed[i] = letter;
+          correct = true;
+        }
+      }
+      document.getElementById('hangmanWord').textContent = guessed.join(' ');
+      document.getElementById('hangmanMessage').textContent = correct ? 'Correct!' : 'Try again!';}
   </script></body>
 </html>
