@@ -381,7 +381,7 @@ Still wondering if I was ever enough... in anyone’s hands......
       else result = 'Computer wins! 🤖';  
       document.getElementById('rpsResult').textContent = `You: ${user}, Computer: ${computer} → ${result}`;  
     }  
-    const targetWord = 'CODE','DUCK','LOVE','ROAD';  
+    const targetWord = 'CODE';  
     let guessed = ['_', '_', '_', '_'];  
     function guessLetter() {  
       const letter = document.getElementById('hangmanInput').value.toUpperCase();  
