@@ -116,12 +116,65 @@ h1::after, h2::after, h3::after {
  </section> <section id="blogs">
     <h2>Latest Blogs</h2>
     <div class="blog-entry">
-      <h3>🎈 Blog Post One</h3>
-      <p>This is the first post in the playful world of blogging. Stay tuned for more!</p>
+      <h3> Blog 1♥️ (</h3>
+      <p>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual proble was and so here I'm discussing about THE REAL PROBLEM.
+        
+There's nothing more important to me than to be...  
+to live...to feel  
+but still the question echoes: is it truly necessary?  
+Alone without love, no tender care to cradle my heart,  
+seeking souls to halt this solitude, but shadows chase me still,  
+like demons dancing in the dark of my restless mind.  
+The world once sparkled bright in solitary glow,  
+but now I'm encircled by strangers whose hearts are void,  
+each glance a dagger, every word a wound,  
+they bury my hope deeper than any weapon can wound.   
+Innocence was my shroud, believing in binds of closeness,  
+convincing myself it’s me, that I’m the flaw,  
+but no, no, no—  
+I’m just a marionette, strings pulled for their delight,  
+yet I’ve grown; perhaps my heart remains a timid child,  
+screaming silently, longing to cry, longing to be whole,  
+and still I know, the mirror reflects the problem within me, cause yes! the problem is me.</p>
     </div>
     <div class="blog-entry">
-      <h3>🎨 Blog Post Two</h3>
-      <p>Here's another post full of color, life, and good vibes.</p>
+      <h3>🎨 Blog 2 </h3>
+      <p>I've been realising lately that everything I do will never be enough maybe or maybe...... I'M NOT ACTUALLY DOING ENOUGH 
+      
+Crying in silence, running through pain,
+Screaming inside like a voice in the rain.
+I've given my all, done more than I could,
+Yet still I'm unseen, misunderstood.
+
+For those that I love, I’ve carried the weight,
+Faced every storm, surrendered to fate.
+But they look at me with eyes so cold,
+And I’m lost in stories I've already told.
+
+Lost in the past, in shadows I flee,
+Trapped in a place I never wished to be.
+I wonder aloud—what do I desire?
+When did my soul lose its fire?
+
+I’ve become someone I never planned,
+A stranger shaped by unseen hands.
+Not cruel, not heartless, not a foe—
+Just tired, just broken, moving slow.
+
+They say I’m wrong, they think I’m weak,
+But maybe I’m just too soft to speak.
+Maybe my love was never enough
+To heal the cracks, to smooth the rough.
+
+I’ve searched within, I’ve tried my best,
+But some battles don’t end in rest.
+Now I stand with nothing left to prove,
+Just the ache of all I couldn’t move.
+
+So if I seem like I’m drifting apart,
+Know it’s not hate—it’s a heavy heart.
+I gave my all, yet here I stand,
+Still wondering if I was ever enough... in anyone’s hands.</p>
     </div>
   </section>  <section id="games">
     <h2>🎮 Let's Play Some Games!</h2><div class="game-section">
