@@ -117,7 +117,7 @@ h1::after, h2::after, h3::after {
     <h2>Latest Blogs</h2>
     <div class="blog-entry">
       <h3> Blog 1♥️ (</h3>
-      <p>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM.
+      <p>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......with this poem----->
         
 There's nothing more important to me than to be...  
 to live...to feel  
@@ -135,13 +135,13 @@ but no, no, no—
 I’m just a marionette, strings pulled for their delight,  
 yet I’ve grown; perhaps my heart remains a timid child,  
 screaming silently, longing to cry, longing to be whole,  
-and still I know, the mirror reflects the problem within me, cause yes! the problem is me.
+and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
 
 23/06/2025</p>
     </div>
     <div class="blog-entry">
       <h3>🎨 Blog 2 </h3>
-      <p>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH 
+      <p>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
       
 Crying in silence, running through pain,
 Screaming inside like a voice in the rain.
@@ -176,7 +176,7 @@ Just the ache of all I couldn’t move.
 So if I seem like I’m drifting apart,
 Know it’s not hate—it’s a heavy heart.
 I gave my all, yet here I stand,
-Still wondering if I was ever enough... in anyone’s hands.
+Still wondering if I was ever enough... in anyone’s hands......
 
 24/06/2025</p>
     </div>
