@@ -293,13 +293,6 @@ Still wondering if I was ever enough... in anyone’s hands......
   <button onclick="nextTrivia()">Next</button>
 </div>
 
-    <div class="game-section" id="puzzle">
-  <h3>🧩 Sliding Puzzle Challenge</h3>
-  <p style="font-size: 14px;">Rearrange the tiles to complete the picture!</p>
-  <div id="puzzleGrid" style="width: 306px; height: 306px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; border: 4px dashed #ff70a6; background: #fffafc; padding: 3px; margin-bottom: 10px; border-radius: 10px;"></div>
-  <button onclick="shufflePuzzle()" style="padding: 8px 16px; background-color: #ff70a6; color: white; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">🔀 Shuffle</button>
-  <p id="winMessage" style="display:none; font-size: 18px; color: green; font-weight: bold; margin-top: 10px;">🎉 You Win!</p>
-</div>
     <div class="game-section" id="simon">
   <h3>💡 Simon Says</h3>
   <div id="simonCircles"></div>
@@ -316,11 +309,7 @@ Still wondering if I was ever enough... in anyone’s hands......
   <canvas id="catchCanvas" width="300" height="300" style="border:1px solid #333;"></canvas>
   <p>Score: <span id="catchScore">0</span></p>
 </div>
-    <div class="game-section">  
-      <h3>🎲 Dice Roller</h3>  
-      <button onclick="rollDice()">Roll Dice</button>  
-      <p id="diceResult"></p>  
-    </div>  
+    
     <div class="game-section">  
       <h3>🧠 Memory Match</h3>  
       <div class="memory-grid" id="memoryMatch"></div>  
@@ -341,10 +330,7 @@ Still wondering if I was ever enough... in anyone’s hands......
       <button onclick="guessLetter()">Guess</button>  
       <p id="hangmanMessage"></p>  
     </div>  
-    <div class="game-section">  
-      <h3>🌀 Maze (Coming Soon)</h3>  
-      <p>A fun maze challenge will be added here!</p>  
-    </div>  
+    
   </section>  
   <section id="thanks">  
     <h2>Thank You!</h2>  
@@ -354,10 +340,7 @@ Still wondering if I was ever enough... in anyone’s hands......
     <p>&copy; 2025 Playful Blog by You!</p>  
   </footer>  
   <script>  
-    function rollDice() {  
-      const result = Math.floor(Math.random() * 6) + 1;  
-      document.getElementById('diceResult').textContent = `You rolled: ${result}`;  
-    }  
+    {
     const emojis = ['🍓','🍓','🍇','🍇','🍍','🍍','🍉','🍉'];  
     let memoryState = [], flipped = [], matched = [];  
     function drawMemory() {  
@@ -399,7 +382,7 @@ Still wondering if I was ever enough... in anyone’s hands......
       else result = 'Computer wins! 🤖';  
       document.getElementById('rpsResult').textContent = `You: ${user}, Computer: ${computer} → ${result}`;  
     }  
-    const targetWord = 'CODE';  
+    const targetWord = 'CODE','DUCK','LOVE','ROAD';  
     let guessed = ['_', '_', '_', '_'];  
     function guessLetter() {  
       const letter = document.getElementById('hangmanInput').value.toUpperCase();  
@@ -479,104 +462,7 @@ function updateMole(){
   document.getElementById('moleScore').textContent=moleScore;
 }
 setupMole();
-const imgSrc="Screenshot_2025-06-25-01-50-38-68.jpg", N=3;
-let puzzle=[];
 
-const puzzleImage = 'Screenshot_2025-06-25-01-50-38-68.jpg'; // your image
-const puzzleSize = 3;
-let puzzle = [], emptyIndex;
-
-function initPuzzle() {
-  puzzle = [];
-  for (let i = 0; i < puzzleSize * puzzleSize - 1; i++) {
-    puzzle.push(i);
-  }
-  puzzle.push(null);
-  emptyIndex = puzzle.length - 1;
-  renderPuzzle();
-}
-
-function renderPuzzle() {
-  const grid = document.getElementById("puzzleGrid");
-  grid.innerHTML = "";
-  document.getElementById("winMessage").style.display = "none";
-
-  for (let i = 0; i < puzzle.length; i++) {
-    const tile = document.createElement("div");
-    tile.style.width = "100px";
-    tile.style.height = "100px";
-    tile.style.borderRadius = "8px";
-    tile.style.boxShadow = "2px 2px 5px rgba(0,0,0,0.1)";
-    tile.style.transition = "0.2s";
-
-    const val = puzzle[i];
-    if (val !== null) {
-      const x = (val % puzzleSize) * 100;
-      const y = Math.floor(val / puzzleSize) * 100;
-      tile.style.backgroundImage = `url(${puzzleImage})`;
-      tile.style.backgroundSize = "300px 300px";
-      tile.style.backgroundPosition = `-${x}px -${y}px`;
-      tile.style.cursor = "pointer";
-      tile.onclick = () => tryMove(i);
-    } else {
-      tile.style.background = "#fff0f5";
-    }
-
-    grid.appendChild(tile);
-  }
-
-  if (isSolved()) {
-    document.getElementById("winMessage").style.display = "block";
-  }
-}
-
-function tryMove(index) {
-  const row = Math.floor(index / puzzleSize);
-  const col = index % puzzleSize;
-  const emptyRow = Math.floor(emptyIndex / puzzleSize);
-  const emptyCol = emptyIndex % puzzleSize;
-
-  const dx = Math.abs(col - emptyCol);
-  const dy = Math.abs(row - emptyRow);
-
-  if ((dx === 1 && dy === 0) || (dx === 0 && dy === 1)) {
-    [puzzle[index], puzzle[emptyIndex]] = [puzzle[emptyIndex], puzzle[index]];
-    emptyIndex = index;
-    renderPuzzle();
-  }
-}
-
-function shufflePuzzle() {
-  for (let i = 0; i < 100; i++) {
-    const moves = getValidMoves();
-    const move = moves[Math.floor(Math.random() * moves.length)];
-    [puzzle[emptyIndex], puzzle[move]] = [puzzle[move], puzzle[emptyIndex]];
-    emptyIndex = move;
-  }
-  renderPuzzle();
-}
-
-function getValidMoves() {
-  const moves = [];
-  const row = Math.floor(emptyIndex / puzzleSize);
-  const col = emptyIndex % puzzleSize;
-
-  if (row > 0) moves.push(emptyIndex - puzzleSize);
-  if (row < puzzleSize - 1) moves.push(emptyIndex + puzzleSize);
-  if (col > 0) moves.push(emptyIndex - 1);
-  if (col < puzzleSize - 1) moves.push(emptyIndex + 1);
-
-  return moves;
-}
-
-function isSolved() {
-  for (let i = 0; i < puzzle.length - 1; i++) {
-    if (puzzle[i] !== i) return false;
-  }
-  return true;
-}
-
-initPuzzle();
 
 const catchCanvas = document.getElementById("catchCanvas");
 const ctx = catchCanvas.getContext("2d");
