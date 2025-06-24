@@ -428,31 +428,23 @@ function userSimon(col){
 ];
 let tvIndex = 0;
 function showTrivia(){
-  const t = trivia[tvIndex];
-  document.getElementById('triviaQuestion').textContent = t.q;
-  document.getElementById('triviaChoices').innerHTML = t.opts.map(o=>`<button onclick="checkTrivia('${o}')">${o}</button>`).join('');
-  document.getElementById('triviaFeedback').textContent = "";
-}
-function checkTrivia(ans){
-  document.getElementById('triviaFeedback').textContent = ans === trivia[tvIndex].a ? "🎉 Correct!" : "❌ Oops!";
-}
-function nextTrivia(){
-  tvIndex = (tvIndex+1)%trivia.length;
-  showTrivia();
-}
-showTrivia();
-let moleScore=0;
-function setupMole(){
-  const grid=document.getElementById('moleGrid');
-  grid.innerHTML="";
-  for(let i=0;i<9;i++){
-    const cell=document.createElement('div');
-    cell.style.border="1px solid #333"; cell.style.fontSize="2rem"; cell.style.textAlign="center";
-    cell.onclick=()=>{ if(cell.innerText==="👻"){ moleScore++; updateMole(); } };
-    grid.appendChild(cell);
-  }
-  setInterval(showMole,800);
-}
+  const trivia = [
+  { q: "Who played Bunny in 'Yeh Jawaani Hai Deewani'?", opts: ["Ranbir Kapoor", "Shahid Kapoor", "Varun Dhawan"], a: "Ranbir Kapoor" },
+  { q: "Which movie features the song 'Tum Hi Ho'?", opts: ["Aashiqui 2", "Kal Ho Na Ho", "Barfi"], a: "Aashiqui 2" },
+  { q: "In 'Dilwale Dulhania Le Jayenge', what is Raj's full name?", opts: ["Raj Malhotra", "Raj Kapoor", "Raj Mehra"], a: "Raj Malhotra" },
+  { q: "Who directed 'Lagaan'?", opts: ["Ashutosh Gowariker", "Karan Johar", "Rakesh Roshan"], a: "Ashutosh Gowariker" },
+  { q: "Which actor starred in '3 Idiots' as Rancho?", opts: ["Aamir Khan", "Hrithik Roshan", "Akshay Kumar"], a: "Aamir Khan" },
+  { q: "Which movie has the dialogue 'Mogambo Khush Hua'?", opts: ["Mr. India", "Sholay", "Don"], a: "Mr. India" },
+  { q: "Who sang 'Chaiyya Chaiyya'?", opts: ["Sukhwinder Singh", "Sonu Nigam", "Arijit Singh"], a: "Sukhwinder Singh" },
+  { q: "Which film won Best Picture at the 2023 Filmfare Awards?", opts: ["Gangubai Kathiawadi", "RRR", "Drishyam 2"], a: "Gangubai Kathiawadi" },
+  { q: "Who played the female lead in 'Barfi'?", opts: ["Priyanka Chopra", "Deepika Padukone", "Alia Bhatt"], a: "Priyanka Chopra" },
+  { q: "In 'Kal Ho Naa Ho', which city is the movie set in?", opts: ["New York", "Mumbai", "London"], a: "New York" },
+  { q: "Which movie features the character 'Geet'?", opts: ["Jab We Met", "Tamasha", "Humpty Sharma Ki Dulhania"], a: "Jab We Met" },
+  { q: "Who is known for the dialogue 'How's the Josh?'?", opts: ["Vicky Kaushal", "John Abraham", "Tiger Shroff"], a: "Vicky Kaushal" },
+  { q: "Which Bollywood movie is based on the Battle of Saragarhi?", opts: ["Kesari", "Shershaah", "URI"], a: "Kesari" },
+  { q: "Who played the role of Murad in 'Gully Boy'?", opts: ["Ranveer Singh", "Ayushmann Khurrana", "Vicky Kaushal"], a: "Ranveer Singh" },
+  { q: "Which movie features the song 'Z coming Z coming'?", opts: ["Zindagi Na Milegi Dobara", "Pathaan", "Jawan"], a: "Jawan" }
+];
 function showMole(){
   [...document.getElementById('moleGrid').children].forEach(c=> c.innerText="");
   const i=Math.floor(Math.random()*9);
