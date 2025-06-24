@@ -1,9 +1,17 @@
-<!DOCTYPE html><html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cool Pastel Website</title>
   <style>
+    .cute-border {
+  width: 120px;
+  height: auto;
+  border: 5px dotted #ffafcc;
+  border-radius: 15px;
+  margin-top: 1rem;
+  box-shadow: 0 0 15px #ffd6e0;
+}
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -62,7 +70,12 @@ canvas {
   <p> Welcome to my website where you can find sad, boring yet amazing blogs!❤️ </p>
 </section><section id="myself">
   <h2>Myself</h2>
-  <p> Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p>
+  <p> Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p><section id="myself">
+  <h2>Myself</h2>
+  <p>Hello! I'm someone who loves creating games, websites, and exploring the 🌸</p>
+  <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-kcqkjN08LxdtqYxZYtqJqH5x/user-cgfSpJdMIBQGoSiNzRBR6Rdz/img-5A6ABF91B5E13A4E907FE5B2CDCA7C31F748AD45.png"
+       alt="Kamakshi's photo" class="cute-border">
+  </section>
 </section><section id="blogs">
   <h2>Blog 1🎨♥️</h2>
   <p> Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......with this poem-----> There's nothing more important to me than to be... to live...to feel but still the question echoes: is it truly necessary? Alone without love, no tender care to cradle my heart, seeking souls to halt this solitude, but shadows chase me still, like demons dancing in the dark of my restless mind. The world once sparkled bright in solitary glow, but now I'm encircled by strangers whose hearts are void, each glance a dagger, every word a wound, they bury my hope deeper than any weapon can wound. Innocence was my shroud, believing in binds of closeness, convincing myself it’s me, that I’m the flaw, but no, no, no— I’m just a marionette, strings pulled for their delight, yet I’ve grown; perhaps my heart remains a timid child, screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
