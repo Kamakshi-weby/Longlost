@@ -116,7 +116,7 @@ h1::after, h2::after, h3::after {
  </section> <section id="blogs">
     <h2>Latest Blogs</h2>
     <div class="blog-entry">
-      <h3> Blog 1♥️ (</h3>
+      <h3> Blog 1♥️ </h3>
       <p>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......with this poem----->
         
 There's nothing more important to me than to be...  
@@ -140,7 +140,7 @@ and still I know, the mirror reflects the problem within me, cause yes! the prob
 23/06/2025</p>
     </div>
     <div class="blog-entry">
-      <h3>🎨 Blog 2 </h3>
+      <h3>🎨 Blog 2♥️ </h3>
       <p>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
       
 Crying in silence, running through pain,
