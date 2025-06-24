@@ -1,6 +1,6 @@
 # Longlost
 My kind of world 
-<!DOCTYPE html><html lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,7 +76,7 @@ My kind of world
 </head>
 <body>
   <header>
-    <h1>🌈 THE LOST WEB🌟</h1>
+    <h1>🌈THE LOST WEB🌟</h1>
   </header>  <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -92,7 +92,7 @@ My kind of world
     <p>This blog was created using love, creativity, and maybe a little code magic 🪄.</p>
   </section>  <section id="myself">
     <h2>Myself</h2>
-    <p>Hi there! I'm Kamakshi and this my first time creating my own website where I blog and maybe live.About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding.I love making friends and in person I'm maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?.I might not be perfect and even this website but I hope y'all like it 🙂.Thanks for being here.Toddles!</p>
+    <p>Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live.About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding.I love making friends,and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok.That's how life works right!?.I might not perfect and neither is this website but I hope y'all like it 🙂.Thanks for being here.Toddles!</p>
   </section>  <section id="blogs">
     <h2>Latest Blogs</h2>
     <div class="blog-entry">
