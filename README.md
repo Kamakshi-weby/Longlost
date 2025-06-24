@@ -89,11 +89,11 @@ My kind of world
   </section>  <section id="about">
     <h2>About</h2>
     <p>This blog was created using love, creativity, and maybe a little code magic 🪄.</p>
-<section id="myself">
+ <section id="myself">
   <h2>Myself</h2>
-  <img src="Screenshot_2025-06-24-23-47-19-46.jpg" alt="Kamakshi" style="max-width: 100; border-radius: 10; margin-bottom: 1;">
+  <img src="5A6ABF91B5E13A4E907FE5B2CDCA7C31F748AD45" alt="Kamakshi" style="width: 200px; border-radius: 12px; display: block; margin: 0 auto 1em;">
   <p>Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
-</section>  <section id="blogs">
+ </section> <section id="blogs">
     <h2>Latest Blogs</h2>
     <div class="blog-entry">
       <h3>🎈 Blog Post One</h3>
