@@ -92,7 +92,7 @@ My kind of world
     <p>This blog was created using love, creativity, and maybe a little code magic 🪄.</p>
   </section>  <section id="myself">
     <h2>Myself</h2>
-    <p>Hi there! I'm the playful creator of this platform. I love colors, smiles, and sharing cool stuff.</p>
+    <p>Hi there! I'm Kamakshi and this my first time creating my own website where I blog and maybe live. I might not be perfect and even this website but I hope y'all like it 🙂. Toddle!</p>
   </section>  <section id="blogs">
     <h2>Latest Blogs</h2>
     <div class="blog-entry">
