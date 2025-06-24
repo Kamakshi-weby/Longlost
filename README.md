@@ -135,7 +135,9 @@ but no, no, no—
 I’m just a marionette, strings pulled for their delight,  
 yet I’ve grown; perhaps my heart remains a timid child,  
 screaming silently, longing to cry, longing to be whole,  
-and still I know, the mirror reflects the problem within me, cause yes! the problem is me.</p>
+and still I know, the mirror reflects the problem within me, cause yes! the problem is me.
+
+23/06/2025</p>
     </div>
     <div class="blog-entry">
       <h3>🎨 Blog 2 </h3>
@@ -174,7 +176,9 @@ Just the ache of all I couldn’t move.
 So if I seem like I’m drifting apart,
 Know it’s not hate—it’s a heavy heart.
 I gave my all, yet here I stand,
-Still wondering if I was ever enough... in anyone’s hands.</p>
+Still wondering if I was ever enough... in anyone’s hands.
+
+24/06/2025</p>
     </div>
   </section>  <section id="games">
     <h2>🎮 Let's Play Some Games!</h2><div class="game-section">
