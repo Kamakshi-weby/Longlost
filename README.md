@@ -281,11 +281,38 @@ Know it’s not hate—it’s a heavy heart.
 I gave my all, yet here I stand,
 Still wondering if I was ever enough... in anyone’s hands......
 
-24/06/2025 </p>  
+24/06/2025 </p>  <h2>🎮 Let's Play Some Games!</h2>
     </div>  
   </section>  
-  <section id="games">  
-    <h2>🎮 Let's Play Some Games!</h2>  
+  <section id="games"> 
+    <div class="game-section" id="trivia">
+  <h3>🎬 Bollywood Trivia</h3>
+  <p id="triviaQuestion"></p>
+  <div id="triviaChoices"></div>
+  <p id="triviaFeedback"></p>
+  <button onclick="nextTrivia()">Next</button>
+</div>
+      <div class="game-section" id="puzzle">
+  <h3>🧩 Sliding Puzzle</h3>
+  <div id="puzzleGrid" style="width:300px;height:300px;"></div>
+  <button onclick="shufflePuzzle()">Shuffle</button>
+</div>
+    <div class="game-section" id="simon">
+  <h3>💡 Simon Says</h3>
+  <div id="simonCircles"></div>
+  <div><button onclick="startSimon()">Start</button></div>
+  <p id="simonMsg"></p>
+</div>
+    <div class="game-section" id="mole">
+  <h3>👻 Whack-a-Mole</h3>
+  <div id="moleGrid" style="display:grid;grid-template:repeat(3,100px)/repeat(3,100px);gap:5px;"></div>
+  <p>Score: <span id="moleScore">0</span></p>
+</div>
+    <div class="game-section" id="catchEmojis">
+  <h3>🍓 Catch Falling Emojis</h3>
+  <canvas id="catchCanvas" width="300" height="300" style="border:1px solid #333;"></canvas>
+  <p>Score: <span id="catchScore">0</span></p>
+</div>
     <div class="game-section">  
       <h3>🎲 Dice Roller</h3>  
       <button onclick="rollDice()">Roll Dice</button>  
@@ -383,7 +410,124 @@ Still wondering if I was ever enough... in anyone’s hands......
       }  
       document.getElementById('hangmanWord').textContent = guessed.join(' ');  
       document.getElementById('hangmanMessage').textContent = correct ? 'Correct!' : 'Try again!';  
-    }  
+    }  const colors=["red","green","blue","yellow"];
+let simonSeq=[], userPos=0;
+
+function startSimon(){
+  simonSeq=[...Array(3)].map(()=>colors[Math.floor(Math.random()*4)]);
+  userPos=0;
+  document.getElementById('simonMsg').textContent="";
+  playSimon(0);
+}
+function playSimon(i){
+  const circles = document.getElementById('simonCircles');
+  circles.innerHTML = colors.map(c=>`<div style="width:50px;height:50px;background:${c};display:inline-block;margin:5px;opacity:${i<0?'1':'0.3'}" onclick="userSimon('${c}')"></div>`).join('');
+  if(i>=0 && i<simonSeq.length){
+    setTimeout(()=>{
+      circles.querySelectorAll('div')[colors.indexOf(simonSeq[i])].style.opacity=1;
+      setTimeout(()=>playSimon(i+1),500);
+    },500);
+  } else {
+    colors.forEach((c,i)=> circles.querySelectorAll('div')[i].style.opacity=1);
+  }
+}
+function userSimon(col){
+  if(col===simonSeq[userPos]){
+    userPos++;
+    if(userPos===simonSeq.length) document.getElementById('simonMsg').textContent="🎉 You won!";
+  } else document.getElementById('simonMsg').textContent="❌ Try again!";
+}const trivia = [
+  { q: "Who played Bunny in 'Yeh Jawaani Hai Deewani'?", opts: ["Ranbir Kapoor","Shahid Kapoor","Varun Dhawan"], a: "Ranbir Kapoor" },
+  { q: "Which movie features the song 'Tum Hi Ho'?", opts: ["Aashiqui 2","Kal Ho Na Ho","Barfi"], a: "Aashiqui 2" }
+];
+let tvIndex = 0;
+function showTrivia(){
+  const t = trivia[tvIndex];
+  document.getElementById('triviaQuestion').textContent = t.q;
+  document.getElementById('triviaChoices').innerHTML = t.opts.map(o=>`<button onclick="checkTrivia('${o}')">${o}</button>`).join('');
+  document.getElementById('triviaFeedback').textContent = "";
+}
+function checkTrivia(ans){
+  document.getElementById('triviaFeedback').textContent = ans === trivia[tvIndex].a ? "🎉 Correct!" : "❌ Oops!";
+}
+function nextTrivia(){
+  tvIndex = (tvIndex+1)%trivia.length;
+  showTrivia();
+}
+showTrivia();
+let moleScore=0;
+function setupMole(){
+  const grid=document.getElementById('moleGrid');
+  grid.innerHTML="";
+  for(let i=0;i<9;i++){
+    const cell=document.createElement('div');
+    cell.style.border="1px solid #333"; cell.style.fontSize="2rem"; cell.style.textAlign="center";
+    cell.onclick=()=>{ if(cell.innerText==="👻"){ moleScore++; updateMole(); } };
+    grid.appendChild(cell);
+  }
+  setInterval(showMole,800);
+}
+function showMole(){
+  [...document.getElementById('moleGrid').children].forEach(c=> c.innerText="");
+  const i=Math.floor(Math.random()*9);
+  document.getElementById('moleGrid').children[i].innerText="👻";
+}
+function updateMole(){
+  document.getElementById('moleScore').textContent=moleScore;
+}
+setupMole();
+const imgSrc="Screenshot_2025-06-25-01-50-38-68.jpg", N=3;
+let puzzle=[];
+
+function initPuzzle(){
+  const grid=document.getElementById('puzzleGrid');
+  grid.innerHTML="";
+  puzzle=[...Array(N*N).keys()];
+  puzzle.forEach((i, idx)=>{
+    const div=document.createElement('div');
+    div.style.width=(300/N)+"px";
+    div.style.height=(300/N)+"px";
+    div.style.background=`url(${imgSrc}) no-repeat -${(i%N)*100}px -${Math.floor(i/N)*100}px`;
+    div.style.boxSizing="border-box";
+    div.style.border="1px solid #555";
+    div.onclick=()=>movePuzzle(idx);
+    grid.appendChild(div);
+  });
+}
+function shufflePuzzle(){
+  for(let i=puzzle.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [puzzle[i],puzzle[j]]=[puzzle[j],puzzle[i]];
+  }
+  initPuzzle();
+}
+function movePuzzle(idx){
+  // simplified: just reshuffle
+  shufflePuzzle();
+}
+initPuzzle();
+const catchCanvas = document.getElementById("catchCanvas");
+const ctx = catchCanvas.getContext("2d");
+let catchScore=0, basketX=150, items=[];
+function startCatch(){
+  setInterval(gameLoop,100);
+  setInterval(() => items.push({x:Math.random()*280,y:0,emoji:['🍓','💖','🍒'][Math.floor(Math.random()*3)]}),800);
+}
+function gameLoop(){
+  ctx.clearRect(0,0,300,300);
+  ctx.fillRect(basketX,280,40,20);
+  items.forEach((it, i)=>{
+    it.y += 5;
+    ctx.font="20px serif";
+    ctx.fillText(it.emoji, it.x, it.y);
+    if(it.y>280 && it.x>basketX && it.x<basketX+40){
+      catchScore++; items.splice(i,1);
+    }
+  });
+  document.getElementById('catchScore').textContent=catchScore;
+}
+catchCanvas.onclick = e => basketX = e.offsetX - 20;
+startCatch();
   </script>  
 </body>  
 </html>
