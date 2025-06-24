@@ -91,7 +91,59 @@ h1::after, h2::after, h3::after {
   bottom: 0;
   border-radius: 2px;
 }
-</style>
+h1, h2, h3 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #6a1b9a; /* Lavender purple */
+}
+
+h1::after, h2::after, h3::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background-color: #ff69b4; /* Pink underline */
+  left: 20%;
+  bottom: 0;
+  border-radius: 2px;
+}
+#myself {
+  background: linear-gradient(135deg, #ffe6f7, #d1c4e9);
+  border-radius: 16px;
+  padding: 2em;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  animation: popUp 0.7s ease-out;
+  transition: transform 0.3s;
+}
+
+#myself:hover {
+  transform: scale(1.02);
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#myself h2 {
+  color: #8e24aa;
+}
+
+#myself p {
+  color: #4a148c;
+  font-size: 1.05em;
+  line-height: 1.6;
+}</style>
 </head>
 <body>
   <header>
