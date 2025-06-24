@@ -8,7 +8,7 @@ My kind of world❤️
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #fff4e6;
+      background-color: lavender;
       color: #333;
     }
     header, footer {
