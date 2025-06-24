@@ -143,7 +143,41 @@ h1::after, h2::after, h3::after {
   color: #4a148c;
   font-size: 1.05em;
   line-height: 1.6;
-}</style>
+}
+#about {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Soft cyan shades */
+  border-radius: 16px;
+  padding: 2em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.7s ease-out;
+  transition: transform 0.3s;
+}
+
+#about:hover {
+  transform: scale(1.02);
+}
+
+#about h2 {
+  color: #00796b; /* Teal green */
+}
+
+#about p {
+  color: #004d40;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 </head>
 <body>
   <header>
