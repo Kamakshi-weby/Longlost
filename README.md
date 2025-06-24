@@ -117,7 +117,7 @@ h1::after, h2::after, h3::after {
     <h2>Latest Blogs</h2>
     <div class="blog-entry">
       <h3> Blog 1♥️ (</h3>
-      <p>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual proble was and so here I'm discussing about THE REAL PROBLEM.
+      <p>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM.
         
 There's nothing more important to me than to be...  
 to live...to feel  
