@@ -309,8 +309,7 @@ Still wondering if I was ever enough... in anyone’s hands......
   <canvas id="catchCanvas" width="300" height="300" style="border:1px solid #333;"></canvas>
   <p>Score: <span id="catchScore">0</span></p>
 </div>
-    
-    <div class="game-section">  
+  <div class="game-section">  
       <h3>🧠 Memory Match</h3>  
       <div class="memory-grid" id="memoryMatch"></div>  
     </div>  
@@ -398,7 +397,6 @@ Still wondering if I was ever enough... in anyone’s hands......
       document.getElementById('hangmanMessage').textContent = correct ? 'Correct!' : 'Try again!';  
     }  const colors=["red","green","blue","yellow"];
 let simonSeq=[], userPos=0;
-
 function startSimon(){
   simonSeq=[...Array(3)].map(()=>colors[Math.floor(Math.random()*4)]);
   userPos=0;
@@ -454,8 +452,6 @@ function updateMole(){
   document.getElementById('moleScore').textContent=moleScore;
 }
 setupMole();
-
-
 const catchCanvas = document.getElementById("catchCanvas");
 const ctx = catchCanvas.getContext("2d");
 let catchScore=0, basketX=150, items=[];
