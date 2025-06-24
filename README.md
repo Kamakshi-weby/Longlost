@@ -338,15 +338,18 @@ Still wondering if I was ever enough... in anyone’s hands......
   <footer>  
     <p>&copy; 2025 Playful Blog by You!</p>  
   </footer>  
-  <script>  
-    {
+   <script>
+  window.onload = function() {
+    // Put all your existing JavaScript code here, like:
     const emojis = ['🍓','🍓','🍇','🍇','🍍','🍍','🍉','🍉'];  
-    let memoryState = [], flipped = [], matched = [];  
+    let memoryState = [], flipped = [], matched = [];
+
     function drawMemory() {  
       memoryState = [...emojis].sort(() => 0.5 - Math.random());  
       matched = [];  
       updateMemoryGrid();  
     }  
+
     function updateMemoryGrid() {  
       const grid = document.getElementById('memoryMatch');  
       grid.innerHTML = '';  
@@ -358,6 +361,7 @@ Still wondering if I was ever enough... in anyone’s hands......
         grid.appendChild(card);  
       });  
     }  
+
     function flipCard(i) {  
       if (flipped.length < 2 && !flipped.includes(i) && !matched.includes(i)) {  
         flipped.push(i);  
@@ -370,8 +374,13 @@ Still wondering if I was ever enough... in anyone’s hands......
           }, 500);  
         }  
       }  
-    }  
-    drawMemory();  
+    }
+
+    drawMemory();
+
+    // ...include all the other game code here too (RPS, Simon, Trivia, etc.)
+  };
+</script> 
     function playRPS(user) {  
       const choices = ['rock', 'paper', 'scissors'];  
       const computer = choices[Math.floor(Math.random() * 3)];  
