@@ -69,7 +69,7 @@ canvas {
   <h2>About</h2>
   <p> Welcome to my website where you can find sad, boring yet amazing blogs!❤️ </p>
 </section><section id="myself">
-  <h2>Myself</h2><img src="Screenshot_2025-06-24-23-47-19-46.jpg" alt="Kamakshi" style="width: 90; border-radius: 8; display: block; margin: 0 auto 1;">
+  <h2>Myself</h2><img src="Screenshot_2025-06-24-23-47-19-46.jpg" alt="Kamakshi" style="width: 120px; border-radius: 12px; display: block; margin: 0 auto 1em;">
   <p> Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. 
 </section><section id="blogs">
   <h2>Blog 1🎨♥️</h2>
