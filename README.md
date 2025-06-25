@@ -12,13 +12,21 @@
   margin-top: 1rem;
   box-shadow: 0 0 15px #ffd6e0;
 }
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(135deg, #fcd5ce, #d0f4de);
-      color: #444;
-      text-align: center;
-    }header, nav {
+   body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #fcd5ce, #d0f4de, #ffc8dd, #b5ead7, #ffafcc);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #444;
+  text-align: center;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+} header, nav {
   background-color: #ffe5ec;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -53,11 +61,30 @@ canvas {
   border: 2px solid #a3c4f3;
   background-color: #f1faee;
 }
-
+section#about {
+  background-color: #ffefef;
+}
+section#myself {
+  background-color: #e5f4ff;
+}
+section#blogs {
+  background-color: #fff0f5;
+}
+section#games {
+  background-color: #eaf8e6;
+}
+section#bye {
+  background-color: #ffe0fb;
+}
+background: linear-gradient(...);
+background-size: 400% 400%;
+animation: gradientMove 15s ease infinite;
   </style>
 </head>
 <body><header>
-  <h1>✨ Welcome to THE LOST WORLD ✨</h1>
+  <h1 style="font-size: 2.5rem; font-weight: bold; background: linear-gradient(to right, #ffafcc, #b5ead7, #caffbf, #a0c4ff, #ffc8dd);
+-webkit-background-clip: text; color: transparent; text-shadow: 0 0 5px #fff;">
+  ✨ Welcome to THE LOST WORLD ✨</h1>
   <nav>
     <a href="#about">About</a>
     <a href="#myself">Myself</a>
