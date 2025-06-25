@@ -90,14 +90,7 @@
   max-width: 90%;
   box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
 }
-.games-block {
-  background-color: #ffe0b2; /* soft orange/peach */
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
-}
+
 .about-section {
   background-color: #fff176; /* warm yellow */
   border-radius: 30px;
@@ -112,22 +105,9 @@
   margin: 20px;
   box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
 }
-.game-section {
-  background-color: #a5d6a7;
-  border-radius: 30px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 5px 15px rgba(0, 200, 100, 0.3);
-}
 
-.home-block {
-  background-color: #fff9c4; /* soft sunny yellow */
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 15px rgba(255, 235, 59, 0.3);
-}
+
+
 .about-block {
   background-color: #e1bee7; /* light lavender */
   border-radius: 20px;
