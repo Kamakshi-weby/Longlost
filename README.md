@@ -4,12 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE LOST WEB</title>
   <style>
-    #games {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+    
 .game-block {
   width: 100%;
   max-width: 600px;
