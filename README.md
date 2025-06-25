@@ -4,8 +4,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE LOST WEB</title>
   <style>
+  #games .game-block {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 90%;
+  overflow-x: auto;
+}
 
-    /* 🔶 Bright backgrounds for About & Myself curved blocks */
+@media (max-width: 768px) {
+  #games .game-block {
+    width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  canvas, iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* 🔶 Bright backgrounds for About & Myself curved blocks */
 #about .curved-block {
   background: linear-gradient(to right, #fff000, #adff2f);
   padding: 30px;
@@ -33,6 +56,28 @@
 
 /* 🔷 Game blocks responsive fix */
 #games .game-block {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 90%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  #games .game-block {
+    width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  canvas, iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
 
     .navbar {
   position: sticky;
@@ -175,26 +220,7 @@
     <li><a href="#games">Games</a></li>
     <li><a href="#come-again">Come Again</a></li>
   </ul>
-</nav>#games {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.game-block {
-  width: 100%;
-  max-width: 600px;
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (max-width: 768px) {
-  .game-block {
-    padding: 15px;
-  }
+</nav>
 
   canvas, iframe, .game-block > div {
     width: 100% !important;
