@@ -63,7 +63,7 @@
     ✨ Welcome to Kamakshi's Website ✨
   </header>  <section id="about">
     <h2>About Myself</h2>
-    <img src="1730789421311.webp" alt="My Image" class="about-img">
+    <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Image" class="about-img">
     <p>🧚‍♀️Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p>
   </section>  <section id="blogs">
     <h2>Blogs♥️</h2>
