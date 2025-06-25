@@ -1,79 +1,227 @@
-// Kamakshi's Full Website Code // React + Tailwind with full games and colorful backgrounds
-
-import React, { useState, useEffect } from 'react'; import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; import './index.css';
-
-// Navbar const Navbar = () => (
-
-  <nav className="bg-yellow-400 text-black flex justify-between items-center px-6 py-4 shadow-md">
-    <h1 className="text-xl font-bold">THE LOST WORLD 🌸</h1>
-    <ul className="flex gap-4 text-md">
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/me">Me</Link></li>
-      <li><Link to="/blogs">Blogs</Link></li>
-      <li><Link to="/games">Game</Link></li>
-    </ul>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE LOST WEB</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fef3c7;
+      color: #333;
+    }
+    nav {
+      background: #facc15;
+      display: flex;
+      justify-content: space-around;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      border-radius: 12px;
+    }
+    nav a:hover {
+      background: #fde68a;
+    }
+    section {
+      padding: 2em;
+      border-bottom: 2px dashed #fcd34d;
+    }
+    h2 {
+      color: #9333ea;
+    }
+    .game-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5em;
+      box-shadow: 2px 2px 12px #ccc;
+      flex: 1 1 300px;
+      min-height: 300px;
+    }
+    button {
+      background-color: #a5f3fc;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0.2em;
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #67e8f9;
+      transform: scale(1.1);
+    }
+    #memory-board {
+      display: grid;
+      grid-template-columns: repeat(4, 50px);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 1em;
+    }
+    .flip-card {
+      width: 50px;
+      height: 50px;
+      perspective: 1000px;
+    }
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      border-radius: 8px;
+      background: #fef9c3;
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#me">Me</a>
+    <a href="#blogs">Blogs</a>
+    <a href="#games">Games</a>
   </nav>
-);// Pages const Home = () => (
+  <section id="home">
+    <h2>Welcome 🌸</h2>
+    <p>This is my cozy corner on the internet where I blog, game, and vibe. You're invited!</p>
+  </section>
+  <section id="about">
+    <h2>About</h2>
+    <p>This website is where I pour my heart out — with blogs and games, all made by me!</p>
+  </section>
+  <section id="me">
+    <h2>About Me</h2>
+    <img src="Screenshot_2025-06-25-01-50-38-68.jpg" alt="Kamakshi" width="150" style="border-radius: 50%;">
+    <p>Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
+  </section>
+  <section id="blogs">
+    <h2>Blog 1 ♥️</h2>
+    <pre>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......with this poem-----> There's nothing more important to me than to be... to live...to feel but still the question echoes: is it truly necessary? Alone without love, no tender care to cradle my heart, seeking souls to halt this solitude, but shadows chase me still, like demons dancing in the dark of my restless mind. The world once sparkled bright in solitary glow, but now I'm encircled by strangers whose hearts are void, each glance a dagger, every word a wound, they bury my hope deeper than any weapon can wound. Innocence was my shroud, believing in binds of closeness, convincing myself it’s me, that I’m the flaw, but no, no, no— I’m just a marionette, strings pulled for their delight, yet I’ve grown; perhaps my heart remains a timid child, screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
 
-  <div className="p-6 text-center bg-orange-100 min-h-screen">
-    <h2 className="text-3xl font-bold mb-4">Welcome to My World! 🎉</h2>
-    <p>This is a space where I share thoughts, games, and vibes. Dive in and enjoy!</p>
-  </div>
-);const About = () => (
+23/06/2025</pre>
+    <h2>Blog 2 ♥️</h2>
+    <pre>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
 
-  <div className="p-6 bg-blue-100 min-h-screen">
-    <h2 className="text-2xl font-semibold mb-2">About This Website</h2>
-    <p>This site is my creative outlet where I write blogs, share games, and just vibe online with a splash of color and chaos.</p>
-  </div>
-);const Me = () => (
+Crying in silence, running through pain, Screaming inside like a voice in the rain. I've given my all, done more than I could, Yet still I'm unseen, misunderstood.
 
-  <div className="p-6 text-center bg-pink-100 min-h-screen">
-    <img src="/images/Screenshot_2025-06-25-01-50-38-68.jpg" alt="Kamakshi" className="mx-auto rounded-2xl w-48 h-48 mb-4" />
-    <p className="text-lg">Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
-  </div>
-);const Blogs = () => (
+For those that I love, I’ve carried the weight, Faced every storm, surrendered to fate. But they look at me with eyes so cold, And I’m lost in stories I've already told.
 
-  <div className="p-6 space-y-10 bg-green-100 min-h-screen">
-    <div className="bg-white p-4 rounded-xl shadow-md">
-      <h3 className="text-xl font-bold">Blog 1 ♥️</h3>
-      <p className="mt-2">Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......</p>
-      <pre className="mt-2 whitespace-pre-wrap">{`There's nothing more important to me than to be... to live...to feel
-but still the question echoes: is it truly necessary?
-...cause yes! the problem is me.....23/06/2025}</pre> </div> <div className="bg-white p-4 rounded-xl shadow-md"> <h3 className="text-xl font-bold">Blog 2 ♥️</h3> <p className="mt-2">I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------></p> <pre className="mt-2 whitespace-pre-wrap">{Crying in silence, running through pain, ...Still wondering if I was ever enough... in anyone’s hands......
+Lost in the past, in shadows I flee, Trapped in a place I never wished to be. I wonder aloud—what do I desire? When did my soul lose its fire?
 
-24/06/2025`}</pre> </div>
+I’ve become someone I never planned, A stranger shaped by unseen hands. Not cruel, not heartless, not a foe— Just tired, just broken, moving slow.
 
-  </div>
-);// GAME COMPONENTS const TicTacToe = () => { const [board, setBoard] = useState(Array(9).fill(null)); const [xIsNext, setXIsNext] = useState(true); const winner = calculateWinner(board); function handleClick(i) { if (board[i] || winner) return; const newBoard = board.slice(); newBoard[i] = xIsNext ? 'X' : 'O'; setBoard(newBoard); setXIsNext(!xIsNext); } function restart() { setBoard(Array(9).fill(null)); setXIsNext(true); } return ( <div> <div className="grid grid-cols-3 gap-1 w-36 mx-auto"> {board.map((val, i) => ( <button key={i} onClick={() => handleClick(i)} className="w-12 h-12 bg-white text-2xl font-bold border-2">{val}</button> ))} </div> <p className="text-center mt-2">{winner ? Winner: ${winner} : Next Player: ${xIsNext ? 'X' : 'O'}}</p> <button onClick={restart} className="mt-2 block mx-auto bg-purple-400 px-4 py-1 rounded">Restart</button> </div> ); }; function calculateWinner(squares) { const lines = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6], ]; for (let [a, b, c] of lines) { if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) return squares[a]; } return null; }
+They say I’m wrong, they think I’m weak, But maybe I’m just too soft to speak. Maybe my love was never enough To heal the cracks, to smooth the rough.
 
-const MemoryGame = () => { const cards = ['🐶', '🐱', '🐭', '🐶', '🐱', '🐭']; const [shuffled, setShuffled] = useState([]); const [flipped, setFlipped] = useState([]); const [matched, setMatched] = useState([]); useEffect(() => { setShuffled(cards.sort(() => 0.5 - Math.random())); }, []); function flipCard(index) { if (flipped.length === 2 || flipped.includes(index)) return; const newFlipped = [...flipped, index]; setFlipped(newFlipped); if (newFlipped.length === 2) { const [first, second] = newFlipped; if (shuffled[first] === shuffled[second]) { setMatched([...matched, first, second]); setFlipped([]); } else { setTimeout(() => setFlipped([]), 1000); } } } return ( <div className="grid grid-cols-3 gap-2"> {shuffled.map((card, index) => ( <div key={index} onClick={() => flipCard(index)} className="w-16 h-16 bg-white text-2xl flex items-center justify-center border rounded" > {flipped.includes(index) || matched.includes(index) ? card : '?'}</div> ))} </div> ); };
+I’ve searched within, I’ve tried my best, But some battles don’t end in rest. Now I stand with nothing left to prove, Just the ache of all I couldn’t move.
 
-const SimonSays = () => { const colors = ['red', 'blue', 'green', 'yellow']; const [sequence, setSequence] = useState([]); const [userInput, setUserInput] = useState([]); const [message, setMessage] = useState('');
+So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy heart. I gave my all, yet here I stand, Still wondering if I was ever enough... in anyone’s hands......
 
-const addToSequence = () => { const newColor = colors[Math.floor(Math.random() * 4)]; setSequence(prev => [...prev, newColor]); setUserInput([]); }; const handleClick = color => { const newInput = [...userInput, color]; setUserInput(newInput); const currentIndex = newInput.length - 1; if (newInput[currentIndex] !== sequence[currentIndex]) { setMessage('Wrong! Try again.'); setSequence([]); setUserInput([]); } else if (newInput.length === sequence.length) { setMessage('Good job!'); setTimeout(addToSequence, 1000); } }; useEffect(() => { addToSequence(); }, []); return ( <div> <p className="mb-2">Follow the pattern!</p> <div className="grid grid-cols-2 gap-2 w-48 mx-auto"> {colors.map(color => ( <button key={color} onClick={() => handleClick(color)} className={w-20 h-20 rounded ${color === 'red' ? 'bg-red-500' : color === 'blue' ? 'bg-blue-500' : color === 'green' ? 'bg-green-500' : 'bg-yellow-400'}}></button> ))} </div> <p className="mt-2 text-center">{message}</p> </div> ); };
-
-const BollywoodTrivia = () => { const questions = [ { q: 'Who is known as the King of Bollywood?', a: ['Salman Khan', 'Aamir Khan', 'Shah Rukh Khan', 'Akshay Kumar'], correct: 2 }, { q: 'Which movie won Best Film at Filmfare 2023?', a: ['RRR', 'Gully Boy', 'Pathaan', 'Jawan'], correct: 3 } ]; const [index, setIndex] = useState(0); const [score, setScore] = useState(0); const [showResult, setShowResult] = useState(false); function answer(i) { if (i === questions[index].correct) setScore(score + 1); if (index + 1 < questions.length) setIndex(index + 1); else setShowResult(true); } return ( <div> {!showResult ? ( <div> <h4 className="font-bold">{questions[index].q}</h4> <div className="grid grid-cols-2 gap-2 mt-2"> {questions[index].a.map((opt, i) => ( <button onClick={() => answer(i)} className="bg-white border rounded p-1">{opt}</button> ))} </div> </div> ) : <p>Your Score: {score}/{questions.length}</p>} </div> ); };
-
-const Games = () => (
-
-  <div className="p-6 grid gap-6 md:grid-cols-2 bg-purple-100 min-h-screen">
-    <div className="bg-pink-300 p-4 rounded-xl shadow-lg">
-      <h3 className="text-xl font-bold mb-2">Tic Tac Toe</h3>
-      <TicTacToe />
+24/06/2025</pre>
+  </section>
+  <section id="games">
+    <h2>Games 🎮</h2>
+    <div class="game-grid">
+      <div class="card">
+        <h3>Memory Game</h3>
+        <div id="memory-board"></div>
+        <button onclick="startMemoryGame()">Restart</button>
+      </div>
     </div>
-    <div className="bg-green-300 p-4 rounded-xl shadow-lg">
-      <h3 className="text-xl font-bold mb-2">Memory Card Game</h3>
-      <MemoryGame />
-    </div>
-    <div className="bg-blue-300 p-4 rounded-xl shadow-lg">
-      <h3 className="text-xl font-bold mb-2">Simon Says</h3>
-      <SimonSays />
-    </div>
-    <div className="bg-yellow-300 p-4 rounded-xl shadow-lg">
-      <h3 className="text-xl font-bold mb-2">Bollywood Trivia</h3>
-      <BollywoodTrivia />
-    </div>
-  </div>
-);// App export default function App() { return ( <Router> <Navbar /> <Routes> <Route path="/" element={<Home />} /> <Route path="/about" element={<About />} /> <Route path="/me" element={<Me />} /> <Route path="/blogs" element={<Blogs />} /> <Route path="/games" element={<Games />} /> </Routes> </Router> ); }
+  </section>
+  <audio id="flip-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_aab9ac687e.mp3"></audio>
+  <script>
+    let memoryEmojis = ['🐱','🐶','🐵','🐸','🐼','🐷','🐯','🐰'];
+    let memoryCards = [];
+    let flipped = [], matched = [];function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
+function startMemoryGame() {
+  memoryCards = shuffle([...memoryEmojis, ...memoryEmojis]);
+  flipped = [];
+  matched = [];
+  renderMemory();
+}
+
+function renderMemory() {
+  const board = document.getElementById('memory-board');
+  board.innerHTML = '';
+  memoryCards.forEach((val, i) => {
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    const inner = document.createElement('div');
+    inner.className = 'flip-inner';
+    if (flipped.includes(i) || matched.includes(i)) card.classList.add('flipped');
+
+    const front = document.createElement('div');
+    front.className = 'flip-front';
+    front.textContent = '❓';
+
+    const back = document.createElement('div');
+    back.className = 'flip-back';
+    back.textContent = val;
+
+    inner.appendChild(front);
+    inner.appendChild(back);
+    card.appendChild(inner);
+
+    card.onclick = () => {
+      if (flipped.length < 2 && !flipped.includes(i) && !matched.includes(i)) {
+        flipped.push(i);
+        document.getElementById('flip-sound').play();
+        renderMemory();
+        if (flipped.length === 2) {
+          setTimeout(() => {
+            if (memoryCards[flipped[0]] === memoryCards[flipped[1]]) {
+              matched.push(...flipped);
+            }
+            flipped = [];
+            renderMemory();
+            if (matched.length === memoryCards.length) {
+              setTimeout(() => alert('🎉 You matched all the animals!'), 200);
+            }
+          }, 1000);
+        }
+      }
+    };
+    board.appendChild(card);
+  });
+}
+startMemoryGame();
+
+  </script>
+</body>
+</html>
