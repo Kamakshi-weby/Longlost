@@ -30,7 +30,7 @@
     #games { background: #E6E6FA; }
     #comeagain { background: #98FB98; }
     img.profile {
-      max-width: 300px;
+      max-width: 100px;
       border: 10px dotted pink;
       border-radius: 20px;
     }
