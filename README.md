@@ -68,17 +68,15 @@
     <img src="1730789421311.webp" alt="My Image" class="about-img">
     <p>🧚‍♀️Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p>
   </section>  <section id="blogs">
-    <h2>Blog 1🎨</h2>
+    <h2>Blogs♥️</h2>
     <div>
-      <h3>💔 Heartbreak in a Magical Realm</h3>
-      <img src="https://i.imgur.com/0XwY7dP.png" alt="Broken Heart Witch" class="blog-img">
+      <h3>Blog 1🎨</h3>
       <p>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......with this poem-----> There's nothing more important to me than to be... to live...to feel but still the question echoes: is it truly necessary? Alone without love, no tender care to cradle my heart, seeking souls to halt this solitude, but shadows chase me still, like demons dancing in the dark of my restless mind. The world once sparkled bright in solitary glow, but now I'm encircled by strangers whose hearts are void, each glance a dagger, every word a wound, they bury my hope deeper than any weapon can wound. Innocence was my shroud, believing in binds of closeness, convincing myself it’s me, that I’m the flaw, but no, no, no— I’m just a marionette, strings pulled for their delight, yet I’ve grown; perhaps my heart remains a timid child, screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
 
 23/06/2025</p>
     </div>
     <div>
       <h3>BLOG 2🎨</h3>
-      <img src="https://i.imgur.com/1hsuHmc.png" alt="Crying Cute Witch" class="blog-img">
       <p> I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
 
 Crying in silence, running through pain, Screaming inside like a voice in the rain. I've given my all, done more than I could, Yet still I'm unseen, misunderstood.
