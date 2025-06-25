@@ -123,7 +123,56 @@
     .flip-back {
       transform: rotateY(180deg);
     }
-  </style>
+#blogs {
+  background: linear-gradient(135deg, #a5b4fc, #fca5a5); /* purple to pink */
+  border-radius: 30px;
+  padding: 2em;
+  margin: 2em;
+  line-height: 1.6;
+  color: #222;
+}
+
+.blog-post {
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}/* Curved & colorful section backgrounds */
+#home {
+  background: linear-gradient(135deg, #fcd34d, #fbbf24); /* Golden */
+  border-radius: 30px;
+  padding: 2em;
+  margin: 2em;
+}
+
+#about {
+  background: linear-gradient(135deg, #6ee7b7, #3b82f6); /* Mint to blue */
+  border-radius: 30px;
+  padding: 2em;
+  margin: 2em;
+}
+
+#me {
+  background: linear-gradient(135deg, #f472b6, #e879f9); /* Pink to violet */
+  border-radius: 30px;
+  padding: 2em;
+  margin: 2em;
+}
+
+#blogs {
+  background: linear-gradient(135deg, #a5b4fc, #fca5a5); /* Soft purple to peach */
+  border-radius: 30px;
+  padding: 2em;
+  margin: 2em;
+}
+
+#games {
+  background: linear-gradient(135deg, #fcd34d, #a78bfa); /* Golden to purple */
+  border-radius: 30px;
+  padding: 2em;
+  margin: 2em;
+}  </style>
 </head>
 <body>
   <nav>
@@ -147,7 +196,7 @@
     <p>Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
   </section>
   <section id="blogs">
-    <h2>Blog 1 ♥️</h2>
+    <h2>Blog 1 ♥️</h2><div class="blog-pst">
     <pre> Its been a rough day and while blaming god for everything that's happening in my life
  I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM....
  with this poem-----> 
@@ -162,8 +211,8 @@
  screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me,
  cause yes! the problem is me.....
 
- 23/06/2025</pre></pre>
-    <h2>Blog 2 ♥️</h2>
+ 23/06/2025</pre></pre></div>
+    <h2>Blog 2 ♥️</h2><div class="blog-pst">
     <pre>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
 
 Crying in silence, running through pain, Screaming inside like a voice in the rain. I've given my all, done more than I could, Yet still I'm unseen, misunderstood.
@@ -180,7 +229,7 @@ I’ve searched within, I’ve tried my best, But some battles don’t end in re
 
 So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy heart. I gave my all, yet here I stand, Still wondering if I was ever enough... in anyone’s hands......
 
-24/06/2025</pre>
+24/06/2025</pre></div>
   </section>
   <section id="games">
     <h2>Games 🎮</h2>
