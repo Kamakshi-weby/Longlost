@@ -30,7 +30,7 @@
     #games { background-color: #E6E6FA; }
     #comeagain { background-color: #98FB98; }
     img.profile {
-      max-width: 300px;
+      max-width: 100px;
       border: 10px dotted pink;
       border-radius: 20px;
     }
@@ -66,19 +66,31 @@
     .simon-btn { height: 60px; }
   </style>
 </head>
-<body><audio id="bg-music" autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d5c57e2a3a.mp3" type="audio/mpeg">
+<body><!-- Background music with toggle button -->
+<audio id="bg-music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/06/12/audio_f07ec2b64e.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<button onclick="toggleMusic()" style="position: fixed; top: 10px; right: 10px; z-index: 1000; background: #fff; border: 2px solid #ccc; border-radius: 10px; padding: 8px;">🔊 Toggle Music</button>
+<button onclick="toggleMusic()" style="position: fixed; top: 10px; right: 10px; z-index: 1000; background: #fff; border: 2px solid #ccc; border-radius: 10px; padding: 8px;">
+  ▶️ Play Music
+</button>
 
 <script>
+  const music = document.getElementById('bg-music');
+  const button = document.querySelector('button');
+
   function toggleMusic() {
-    const music = document.getElementById('bg-music');
-    music.paused ? music.play() : music.pause();
+    if (music.paused) {
+      music.play();
+      button.textContent = '⏸️ Pause Music';
+    } else {
+      music.pause();
+      button.textContent = '▶️ Play Music';
+    }
   }
-</script> </body>
+</script>
+   </body>
   </audio>  <section id="home">
     <h1>Welcome to THE LOST WEB</h1>
     <p>Explore fun, colors, and creativity 🌈</p>
@@ -87,7 +99,7 @@
     <p>This is a magical, colorful website full of joy, games, blogs, and a glimpse into my world.</p>
   </section>  <section id="myself">
     <h1>Myself</h1>
-    <p>Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
+    <p> Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Photo" class="profile">
   </section>  <section id="blogs">
     <h1>Blogs</h1>
@@ -96,7 +108,7 @@
       <p> Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......with this poem-----> There's nothing more important to me than to be... to live...to feel but still the question echoes: is it truly necessary? Alone without love, no tender care to cradle my heart, seeking souls to halt this solitude, but shadows chase me still, like demons dancing in the dark of my restless mind. The world once sparkled bright in solitary glow, but now I'm encircled by strangers whose hearts are void, each glance a dagger, every word a wound, they bury my hope deeper than any weapon can wound. Innocence was my shroud, believing in binds of closeness, convincing myself it’s me, that I’m the flaw, but no, no, no— I’m just a marionette, strings pulled for their delight, yet I’ve grown; perhaps my heart remains a timid child, screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
 
 23/06/2025 </p>
-      <img src="https://via.placeholder.com/400x200/ffc0cb/000000?text=Colorful+Joy" alt="Colorful Joy">
+      
     </div>
     <div class="blog">
       <h2>Blog 2🌸</h2>
@@ -117,7 +129,7 @@ I’ve searched within, I’ve tried my best, But some battles don’t end in re
 So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy heart. I gave my all, yet here I stand, Still wondering if I was ever enough... in anyone’s hands......
 
 24/06/2025</p>
-      <img src="https://via.placeholder.com/400x200/87cefa/000000?text=Magical+Journey" alt="Magical Journey">
+  
     </div>
   </section>  <section id="games">
     <h1>Games</h1><div class="game" id="tic-tac-toe">
