@@ -136,7 +136,14 @@
   max-width: 90%;
   box-shadow: 0 4px 15px rgba(186, 104, 200, 0.3);
 }
-
+.games-block {
+  background-color: #ffe0e0; /* soft peach pink */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(255, 99, 132, 0.2);
+}
 </style>
 </head>
 <body>
@@ -152,7 +159,7 @@
   <h2>About</h2>
   <p>This website is created with love and sparkles ✨ to showcase my thoughts, hobbies, and a few fun games. I hope you enjoy the vibe!</p>
   </section><section id="about"><section id="blogs" class="blog-section">
-<section id="games" class="game-section">
+<section id="games" class="games-block">
     <h2> Me:) </h2>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Image" class="about-img">
     <p>🧚‍♀️Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p>
