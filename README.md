@@ -82,7 +82,22 @@
   font-size: 1.5em;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-
+.blogs-block {
+  background-color: #b3e5fc; /* sky blue */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+.games-block {
+  background-color: #ffe0b2; /* soft orange/peach */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
 .about-section {
   background-color: #fff176; /* warm yellow */
   border-radius: 30px;
@@ -105,7 +120,22 @@
   box-shadow: 0 5px 15px rgba(0, 200, 100, 0.3);
 }
 
-
+.home-block {
+  background-color: #fff9c4; /* soft sunny yellow */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(255, 235, 59, 0.3);
+}
+.about-block {
+  background-color: #e1bee7; /* light lavender */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(186, 104, 200, 0.3);
+}
 
 </style>
 </head>
@@ -114,10 +144,16 @@
     <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_93cb55b9b5.mp3" type="audio/mpeg">
   </audio>
   <header>
-    ✨ Welcome to Kamakshi's Website ✨
-  </header>  <section id="about"><section id="blogs" class="blog-section">
+    ✨ Welcome to THE LOST WEB ✨
+  </header> <section class="home-block">
+  <h2>Home</h2>
+  <p>Welcome to my cozy little website corner 🌟. This space is where dreams meet design, and magic meets memories!</p>
+  </section> <section class="about-block">
+  <h2>About</h2>
+  <p>This website is created with love and sparkles ✨ to showcase my thoughts, hobbies, and a few fun games. I hope you enjoy the vibe!</p>
+  </section><section id="about"><section id="blogs" class="blog-section">
 <section id="games" class="game-section">
-    <h2>About Myself</h2>
+    <h2> Me:) </h2>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Image" class="about-img">
     <p>🧚‍♀️Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p>
   </section>  <section id="blogs">
