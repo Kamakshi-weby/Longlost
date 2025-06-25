@@ -190,51 +190,75 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
     }
 
     // Snake Game
-    const canvas = document.getElementById("snake");
-    const ctx = canvas.getContext("2d");
-    const box = 20;
-    let snake = [{x: 9*box, y: 10*box}];
-    let food = {x: Math.floor(Math.random()*15+1)*box, y: Math.floor(Math.random()*15+1)*box};
-    let direction;
-    document.addEventListener("keydown", dir);
-    function dir(event) {
-      if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-      else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-      else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
-      else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+ <script>
+  const canvas = document.getElementById("snake");
+  const ctx = canvas.getContext("2d");
+  const box = 20;
+  let snake = [{ x: 9 * box, y: 10 * box }];
+  let food = {
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+  };
+  let direction = null;
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+    else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+    else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+    else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+  });
+
+  function drawSnake() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw snake
+    for (let i = 0; i < snake.length; i++) {
+      ctx.fillStyle = i === 0 ? "#8e44ad" : "#e91e63";
+      ctx.fillRect(snake[i].x, snake[i].y, box, box);
     }
-    function drawSnakeGame() {
-      ctx.clearRect(0, 0, 300, 300);
-      for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = (i === 0) ? "darkgreen" : "green";
-        ctx.fillRect(snake[i].x, snake[i].y, box, box);
-      }
-      ctx.fillStyle = "red";
-      ctx.fillRect(food.x, food.y, box, box);
-      let headX = snake[0].x;
-      let headY = snake[0].y;
-      if (direction === "LEFT") headX -= box;
-      if (direction === "RIGHT") headX += box;
-      if (direction === "UP") headY -= box;
-      if (direction === "DOWN") headY += box;
-      if (headX === food.x && headY === food.y) {
-        food = {x: Math.floor(Math.random()*15+1)*box, y: Math.floor(Math.random()*15+1)*box};
-      } else {
-        snake.pop();
-      }
-      const newHead = {x: headX, y: headY};
-      if (headX < 0 || headY < 0 || headX >= 300 || headY >= 300 || collision(newHead, snake)) {
-        clearInterval(snakeGame);
-      }
-      snake.unshift(newHead);
+
+    // Draw food
+    ctx.fillStyle = "#2ecc71";
+    ctx.fillRect(food.x, food.y, box, box);
+
+    // Snake head movement
+    let headX = snake[0].x;
+    let headY = snake[0].y;
+
+    if (direction === "LEFT") headX -= box;
+    else if (direction === "UP") headY -= box;
+    else if (direction === "RIGHT") headX += box;
+    else if (direction === "DOWN") headY += box;
+    else return; // No movement if no key is pressed
+
+    // Eat food
+    if (headX === food.x && headY === food.y) {
+      food = {
+        x: Math.floor(Math.random() * 15 + 1) * box,
+        y: Math.floor(Math.random() * 15 + 1) * box
+      };
+    } else {
+      snake.pop();
     }
-    function collision(head, array) {
-      for (let i = 0; i < array.length; i++) {
-        if (head.x === array[i].x && head.y === array[i].y) return true;
-      }
-      return false;
+
+    const newHead = { x: headX, y: headY };
+
+    // Game Over conditions
+    if (
+      headX < 0 || headY < 0 ||
+      headX >= canvas.width || headY >= canvas.height ||
+      snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
+    ) {
+      clearInterval(game);
+      alert("Game Over! Refresh to play again.");
+      return;
     }
-    const snakeGame = setInterval(drawSnakeGame, 200);
+
+    snake.unshift(newHead);
+  }
+
+  const game = setInterval(drawSnake, 150);
+</script>
 
     // Bollywood Trivia
     const triviaQuestions = [
