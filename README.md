@@ -106,6 +106,29 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+#about .curved-block {
+  background: linear-gradient(to right, #fff000, #adff2f); /* Bright yellow to green */
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: #222; /* Dark text for good contrast */
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#myself .curved-block {
+  background: linear-gradient(to right, #ffea00, #76ff03); /* Warm yellow to neon green */
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: #222;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
   </style>
 </head>
 <body>
@@ -121,7 +144,7 @@
 </nav>
     <section id="home">
     <h1>Welcome to Kamakshi's website</h1>
-    <p>🌈 Explore my blogs....if you want to! 🌈</p>
+    <p>🌈Explore my blogs....if you want to!🌈</p>
   </section>  <section id="about">
    <div class="curved block"> <h1>About</h1>
     <p>This is a magical, colorful website full of joy, games, blogs, and a glimpse of my world ♥️😴</p>
