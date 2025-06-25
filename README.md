@@ -12,9 +12,9 @@
       font-family: 'Comic Sans MS', cursive, sans-serif;
     }
     section {
-      padding: 30px;
-      min-height: 100vh;
-    }
+  padding: 30px 20px;
+  min-height: auto; /* or remove this line */
+}
     h1, h2 {
       background: linear-gradient(90deg, #ff6ec4, #7873f5);
       color: white;
