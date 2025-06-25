@@ -5,6 +5,32 @@
   <title>THE LOST WEB</title>
   <style>
     body {
+  background: white;
+}
+    .tic-tac-toe {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.tic-cell {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border: 3px solid #4c1d95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tic-cell:hover {
+  background: #ede9fe;
+}
+    body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #fcd34d, #f9a8d4, #a5f3fc);
@@ -172,7 +198,18 @@
   border-radius: 30px;
   padding: 2em;
   margin: 2em;
-}  </style>
+}  
+.poem {
+  background: linear-gradient(135deg, #fdf6e3, #fce7f3); /* soft yellow to pink */
+  padding: 1.5em;
+  margin-top: 1em;
+  border-left: 6px solid #a78bfa;
+  border-radius: 20px;
+  font-style: italic;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+</style>
 </head>
 <body>
   <nav>
@@ -196,7 +233,7 @@
     <p>Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
   </section>
   <section id="blogs">
-    <h2>Blog 1 ♥️</h2><div class="blog-pst">
+    <h2>Blog 1 ♥️</h2><div class="blog-post"><div class="poem">
     <pre> Its been a rough day and while blaming god for everything that's happening in my life
  I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM....
  with this poem-----> 
@@ -211,8 +248,8 @@
  screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me,
  cause yes! the problem is me.....
 
- 23/06/2025</pre></pre></div>
-    <h2>Blog 2 ♥️</h2><div class="blog-pst">
+ 23/06/2025</pre></pre></div></div>
+    <h2>Blog 2 ♥️</h2><div class="blog-post"><div class="poem">
     <pre>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
 
 Crying in silence, running through pain, Screaming inside like a voice in the rain. I've given my all, done more than I could, Yet still I'm unseen, misunderstood.
@@ -229,7 +266,7 @@ I’ve searched within, I’ve tried my best, But some battles don’t end in re
 
 So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy heart. I gave my all, yet here I stand, Still wondering if I was ever enough... in anyone’s hands......
 
-24/06/2025</pre></div>
+24/06/2025</pre></div></div>
   </section>
   <section id="games">
     <h2>Games 🎮</h2>
