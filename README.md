@@ -66,10 +66,19 @@
     .simon-btn { height: 60px; }
   </style>
 </head>
-<body>
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/05/13/audio_5e38749a97.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+<body><audio id="bg-music" autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d5c57e2a3a.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<button onclick="toggleMusic()" style="position: fixed; top: 10px; right: 10px; z-index: 1000; background: #fff; border: 2px solid #ccc; border-radius: 10px; padding: 8px;">🔊 Toggle Music</button>
+
+<script>
+  function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    music.paused ? music.play() : music.pause();
+  }
+</script> </body>
   </audio>  <section id="home">
     <h1>Welcome to THE LOST WEB</h1>
     <p>Explore fun, colors, and creativity 🌈</p>
