@@ -205,7 +205,7 @@
   margin-bottom: 20px;
 }
 #about {
-  background: #fff700;
+  background: #fff710;
 }
 
 
@@ -221,25 +221,8 @@
     <li><a href="#come-again">Come Again</a></li>
   </ul>
 </nav>
-
-  canvas, iframe, .game-block > div {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: auto;
-  }
-}
 <header>
-  
-<nav class="menu">
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#myself">Myself</a></li>
-    <li><a href="#blogs">Blogs</a></li>
-    <li><a href="#games">Games</a></li>
-    <li><a href="#comeagain">Come Again</a></li>
-  </ul>
-</nav>
+
     <section id="home">
     <h1>Welcome to Kamakshi's website</h1>
     <p>🌈Explore my blogs....if you want to!🌈</p>
