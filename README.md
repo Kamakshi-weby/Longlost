@@ -90,12 +90,14 @@
   margin: 20px;
   box-shadow: 0 5px 15px rgba(255, 200, 0, 0.3);
 }
-.blog-section {
-  background-color: #81d4fa;
-  border-radius: 30px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
+.blogs-block {
+  background-color: #ffffff;
+  border: 3px dashed #f48fb1; /* light pink border */
+  border-radius: 25px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 6px 15px rgba(244, 143, 177, 0.2); /* soft pink glow */
 }
 
 
@@ -114,21 +116,14 @@
   max-width: 90%;
   box-shadow: 0 4px 15px rgba(186, 104, 200, 0.3);
 }
+
 .games-block {
-  background-color: #ffe0e0; /* peachy pink */
+  background-color: #c8e6c9;
   border-radius: 20px;
   padding: 20px;
   margin: 20px auto;
   max-width: 90%;
-  box-shadow: 0 4px 15px rgba(255, 99, 132, 0.2);
-}
-.games-block {
-  background-color: #ffe0e0; /* soft peach pink */
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 15px rgba(255, 99, 132, 0.2);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
 }
 </style>
 </head>
