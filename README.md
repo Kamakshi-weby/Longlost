@@ -53,6 +53,26 @@
         font-size: 1.5em;
       }
     }
+    .welcome-section {
+  background: linear-gradient(to right, #ff6f61, #ffcc00);
+  color: white;
+  text-shadow: 2px 2px 4px #00000050;
+  padding: 30px;
+  font-size: 2.5em;
+  border-bottom: 4px dashed #fff;
+}
+
+.about-section {
+  background: linear-gradient(to right, #ffb347, #ffcc33);
+}
+
+.blog-section {
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+}
+
+.game-section {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+}
   </style>
 </head>
 <body>
@@ -61,7 +81,8 @@
   </audio>
   <header>
     ✨ Welcome to Kamakshi's Website ✨
-  </header>  <section id="about">
+  </header>  <section id="about"><section id="blogs" class="blog-section">
+<section id="games" class="game-section">
     <h2>About Myself</h2>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Image" class="about-img">
     <p>🧚‍♀️Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p>
@@ -113,11 +134,6 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
   <button onclick="startSimon()">Start Simon Game</button>
 </div>
 
-<!-- Snake Game -->
-<div>
-  <h3>Snake Game</h3>
-  <canvas id="snake" width="300" height="300"></canvas>
-</div>
 
 <!-- Bollywood Trivia -->
 <div>
@@ -188,78 +204,7 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
         setTimeout(nextSimonRound, 1000);
       }
     }
-
-    // Snake Game
- <script>
-  const canvas = document.getElementById("snake");
-  const ctx = canvas.getContext("2d");
-  const box = 20;
-  let snake = [{ x: 9 * box, y: 10 * box }];
-  let food = {
-    x: Math.floor(Math.random() * 15 + 1) * box,
-    y: Math.floor(Math.random() * 15 + 1) * box
-  };
-  let direction = null;
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-    else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-    else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
-    else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
-  });
-
-  function drawSnake() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Draw snake
-    for (let i = 0; i < snake.length; i++) {
-      ctx.fillStyle = i === 0 ? "#8e44ad" : "#e91e63";
-      ctx.fillRect(snake[i].x, snake[i].y, box, box);
-    }
-
-    // Draw food
-    ctx.fillStyle = "#2ecc71";
-    ctx.fillRect(food.x, food.y, box, box);
-
-    // Snake head movement
-    let headX = snake[0].x;
-    let headY = snake[0].y;
-
-    if (direction === "LEFT") headX -= box;
-    else if (direction === "UP") headY -= box;
-    else if (direction === "RIGHT") headX += box;
-    else if (direction === "DOWN") headY += box;
-    else return; // No movement if no key is pressed
-
-    // Eat food
-    if (headX === food.x && headY === food.y) {
-      food = {
-        x: Math.floor(Math.random() * 15 + 1) * box,
-        y: Math.floor(Math.random() * 15 + 1) * box
-      };
-    } else {
-      snake.pop();
-    }
-
-    const newHead = { x: headX, y: headY };
-
-    // Game Over conditions
-    if (
-      headX < 0 || headY < 0 ||
-      headX >= canvas.width || headY >= canvas.height ||
-      snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
-    ) {
-      clearInterval(game);
-      alert("Game Over! Refresh to play again.");
-      return;
-    }
-
-    snake.unshift(newHead);
-  }
-
-  const game = setInterval(drawSnake, 150);
-</script>
-
+   
     // Bollywood Trivia
     const triviaQuestions = [
       { q: "Which movie featured the song 'Tujhe Dekha To'?", a: "DDLJ", o: ["Kuch Kuch Hota Hai", "DDLJ", "Kabhi Khushi Kabhie Gham"] },
