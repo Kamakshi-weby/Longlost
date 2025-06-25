@@ -96,6 +96,16 @@
 #myself {
   background: linear-gradient(to bottom right, #D8BFD8, #E6E6FA);
 }
+.curved-block {
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
   </style>
 </head>
 <body>
@@ -113,10 +123,10 @@
     <h1>Welcome to Kamakshi's website</h1>
     <p>Explore my blogs if you want to🌈</p>
   </section>  <section id="about">
-    <h1>About</h1>
+   <div class="curved block"> <h1>About</h1>
     <p>This is a magical, colorful website full of joy, games, blogs, and a glimpse of my world ♥️😴</p>
   </section>  <section id="myself">
-    <h1>Myself</h1>
+   <div class="curved block"> <h1>Myself</h1>
     <p>😊 Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself, I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Photo" class="profile">
   </section>  <section id="blogs">
