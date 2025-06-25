@@ -22,8 +22,8 @@
       padding: 40px 20px;
     }
 .about-img {
-  width: 60px !important;
-  height: 60px !important;
+  width: 80px !important;
+  height: 80px !important;
   object-fit: cover;
   border: 3px dashed #ffb6c1;
   border-radius: 50%;
