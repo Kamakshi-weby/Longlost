@@ -125,7 +125,17 @@
   </section>
   <section id="blogs">
     <h2>Blog 1 ♥️</h2>
-    <pre>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM......with this poem-----> There's nothing more important to me than to be... to live...to feel but still the question echoes: is it truly necessary? Alone without love, no tender care to cradle my heart, seeking souls to halt this solitude, but shadows chase me still, like demons dancing in the dark of my restless mind. The world once sparkled bright in solitary glow, but now I'm encircled by strangers whose hearts are void, each glance a dagger, every word a wound, they bury my hope deeper than any weapon can wound. Innocence was my shroud, believing in binds of closeness, convincing myself it’s me, that I’m the flaw, but no, no, no— I’m just a marionette, strings pulled for their delight, yet I’ve grown; perhaps my heart remains a timid child, screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
+    <pre>Its been a rough day and while blaming god for everything that's happening in my life I realised what the actual problem was 
+      and so here I'm discussing about THE REAL PROBLEM......with this poem----->
+      There's nothing more important to me than to be... to live...to feel
+      but still the question echoes: is it truly necessary? Alone without love, no tender care to cradle my heart, seeking souls to halt this solitude,
+      but shadows chase me still, like demons dancing in the dark of my restless mind.
+      The world once sparkled bright in solitary glow,
+      but now I'm encircled by strangers whose hearts are void, each glance a dagger, every word a wound, they bury my hope deeper than any weapon can wound.
+      Innocence was my shroud, believing in binds of closeness, convincing myself it’s me, 
+      that I’m the flaw, but no, no, no— I’m just a marionette, strings pulled for their delight, 
+      yet I’ve grown; perhaps my heart remains a timid child, screaming silently, longing to cry,
+      longing to be whole, and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
 
 23/06/2025</pre>
     <h2>Blog 2 ♥️</h2>
