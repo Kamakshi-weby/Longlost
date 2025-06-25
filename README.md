@@ -22,11 +22,11 @@
       padding: 40px 20px;
     }
 .about-img {
-  width: 60px; /* fixed small size */
-  height: 60px; /* keep it proportional or match your style */
-  object-fit: cover; /* crops it nicely if it's not square */
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: cover;
   border: 3px dashed #ffb6c1;
-  border-radius: 50%; /* makes it a circle */
+  border-radius: 50%;
   display: block;
   margin: 10px auto;
 }
