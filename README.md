@@ -256,6 +256,57 @@ h1, h2 {
 .navbar a:hover {
   background-color: #ffd700;
 }
+.menu {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to right, #ffeb3b, #8bc34a);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 15px;
+  background: linear-gradient(to right, #ff69b4, #9370db);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.menu a:hover {
+  background: linear-gradient(to right, #9370db, #ff69b4);
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu a {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+}
 </style>
 </head>
 <body><nav class="navbar">
@@ -296,13 +347,15 @@ h1, h2 {
 }
 <header>
   
-  <nav class="navbar">
-  <a href="#home">🏠 Home</a>
-  <a href="#about">💡 About</a>
-  <a href="#myself">🧸 Myself</a>
-  <a href="#blogs">📝 Blogs</a>
-  <a href="#games">🎮 Games</a>
-  <a href="#comeagain">💖 Come Again</a>
+<nav class="menu">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#myself">Myself</a></li>
+    <li><a href="#blogs">Blogs</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#comeagain">Come Again</a></li>
+  </ul>
 </nav>
     <section id="home">
     <h1>Welcome to Kamakshi's website</h1>
