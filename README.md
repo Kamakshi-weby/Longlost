@@ -4,6 +4,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE LOST WEB</title>
   <style>
+    /* 🔶 Bright backgrounds for About & Myself curved blocks */
+#about .curved-block {
+  background: linear-gradient(to right, #fff000, #adff2f);
+  padding: 30px;
+  border-radius: 30px;
+  color: #222;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#myself .curved-block {
+  background: linear-gradient(to right, #ffea00, #76ff03);
+  padding: 30px;
+  border-radius: 30px;
+  color: #222;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔶 Optional: full section background color too */
+#about {
+  background-color: #fff700;
+}
+
+#myself {
+  background-color: #caff70;
+}
+
+/* 🔷 Game blocks responsive fix */
+#games .game-block {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 90%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  #games .game-block {
+    width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  canvas, iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+} 
     .navbar {
   position: sticky;
   top: 0;
@@ -129,7 +179,13 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-  </style>
+#about {
+  background: #fff700;
+}
+
+#myself {
+  background: #caff70;
+}  </style>
 </head>
 <body>
 <header>
