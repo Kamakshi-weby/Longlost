@@ -79,11 +79,13 @@ section#bye {
 background: linear-gradient(...);
 background-size: 400% 400%;
 animation: gradientMove 15s ease infinite;
+  .sparkle {
+  animation: sparkle 1s infinite alternate;
+}
   </style>
 </head>
 <body><header>
-  <h1 style="font-size: 2.5rem; font-weight: bold; background: linear-gradient(to right, #ffafcc, #b5ead7, #caffbf, #a0c4ff, #ffc8dd);
--webkit-background-clip: text; color: transparent; text-shadow: 0 0 5px #fff;">
+  <h1 class="sparkle" style="color: #ff69b4;">
   ✨ Welcome to THE LOST WORLD ✨</h1>
   <nav>
     <a href="#about">About</a>
@@ -175,6 +177,7 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
 
   function startSnakeGame() {
     document.getElementById("gameContainer").innerHTML = '<p>🐍 Snake game coming soon!</p>';
-  }
+  } 
+  
 </script></body>
 </html>
