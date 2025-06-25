@@ -22,12 +22,14 @@
       padding: 40px 20px;
     }
     .about-img {
-      max-width: 60px;
-      border: 5px dashed #ffb6c1;
-      border-radius: 20px;
-      display: block;
-      margin: 20px auto;
-    }
+  width: 60px; /* fixed small size */
+  height: 60px; /* keep it proportional or match your style */
+  object-fit: cover; /* crops it nicely if it's not square */
+  border: 3px dashed #ffb6c1;
+  border-radius: 50%; /* makes it a circle */
+  display: block;
+  margin: 10px auto;
+}
     .blog-img {
       width: 100%;
       border-radius: 15px;
