@@ -4,6 +4,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE LOST WEB</title>
   <style>
+    #games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-block {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .game-block {
+    padding: 15px;
+  }
+
+  canvas, iframe, .game-block > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto;
+  }
+}
+section {
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
     /* 🔶 Bright backgrounds for About & Myself curved blocks */
 #about .curved-block {
   background: linear-gradient(to right, #fff000, #adff2f);
@@ -185,9 +222,78 @@
 
 #myself {
   background: #caff70;
-}  </style>
+}
+.navbar {
+  background: linear-gradient(to right, #ffeb3b, #8bc34a);
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 5px 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #ffd700;
+}
+</style>
 </head>
-<body>
+<body><nav class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#myself">Myself</a></li>
+    <li><a href="#blogs">Blogs</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#come-again">Come Again</a></li>
+  </ul>
+</nav>#games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-block {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .game-block {
+    padding: 15px;
+  }
+
+  canvas, iframe, .game-block > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto;
+  }
+}
 <header>
   
   <nav class="navbar">
