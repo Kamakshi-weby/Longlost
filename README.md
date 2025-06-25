@@ -72,36 +72,41 @@
       }
     }
     .welcome-section {
-  background: linear-gradient(to right, #ff6f61, #ffcc00);
+  background-color: #ce93d8; /* Light Purple */
   color: white;
-  text-shadow: 2px 2px 4px #00000050;
-  padding: 30px;
-  font-size: 2.5em;
-  border-bottom: 4px dashed #fff;
+  padding: 40px 20px;
+  margin: 20px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(150, 50, 200, 0.3);
+  font-size: 1.5em;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .about-section {
-  background: linear-gradient(to right, #ffb347, #ffcc33);
-}
-
-.blog-section {
-  background: linear-gradient(to right, #00c9ff, #92fe9d);
-}
-
-.game-section {
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
-}
- .about-section {
-  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* fresh green to pale lime */
-} .about-section {
-  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* fresh green to pale lime */
-}
-.game-section {
-  background: linear-gradient(to right, #ffb88c, #de6262); /* peachy coral to deep coral */
+  background-color: #fff176; /* warm yellow */
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 5px 15px rgba(255, 200, 0, 0.3);
 }
 .blog-section {
-  background: linear-gradient(to right, #89f7fe, #66a6ff); /* sky blue to deep blue */
+  background-color: #81d4fa;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
 }
+.game-section {
+  background-color: #a5d6a7;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 5px 15px rgba(0, 200, 100, 0.3);
+}
+
+
+
 </style>
 </head>
 <body>
