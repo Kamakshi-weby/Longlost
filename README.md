@@ -82,7 +82,6 @@
   font-size: 1.5em;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-
 .about-section {
   background-color: #fff176; /* warm yellow */
   border-radius: 30px;
@@ -90,8 +89,6 @@
   margin: 20px;
   box-shadow: 0 5px 15px rgba(255, 200, 0, 0.3);
 }
-
-
 .blogs-block {
   background-color: #ffffff;
   border: 3px dashed #f48fb1;
@@ -124,6 +121,27 @@
   margin: 30px auto;
   max-width: 90%;
   box-shadow: 0 6px 15px rgba(100, 181, 246, 0.2);
+}
+.game-box {
+  background-color: #fce4ec; /* light pink by default */
+  border: 2px dashed #ec407a;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.1);
+}
+.game-box.blue {
+  background-color: #e3f2fd;
+  border: 2px dashed #42a5f5;
+}
+.game-box.green {
+  background-color: #e8f5e9;
+  border: 2px dashed #66bb6a;
+}
+.game-box.purple {
+  background-color: #ede7f6;
+  border: 2px dashed #9575cd;
 }
 </style>
 </head>
