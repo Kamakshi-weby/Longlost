@@ -4,6 +4,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE LOST WEB</title>
   <style>
+    .navbar {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.5);
+}
     * {
       margin: 0;
       padding: 0;
@@ -72,16 +100,15 @@
 </head>
 <body>
 <header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#myself">Myself</a>
-    <a href="#blogs">Blogs</a>
-    <a href="#games">Games</a>
-    <a href="#comeagain">Come Again</a>
-  </nav>
-</header>
   
+  <nav class="navbar">
+  <a href="#home">🏠 Home</a>
+  <a href="#about">💡 About</a>
+  <a href="#myself">🧸 Myself</a>
+  <a href="#blogs">📝 Blogs</a>
+  <a href="#games">🎮 Games</a>
+  <a href="#comeagain">💖 Come Again</a>
+</nav>
     <section id="home">
     <h1>Welcome to Kamakshi's website</h1>
     <p>Explore my blogs if you want to🌈</p>
@@ -153,7 +180,7 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
     <p>Thank you for visiting. Hope to see you again soon 💖</p>
   </section>  
 
-    // Tic Tac Toe
+  <script> // Tic Tac Toe
     const board = document.querySelector('.board');
     let currentPlayer = 'X';
     let cells = Array(9).fill('');
