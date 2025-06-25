@@ -3,7 +3,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE LOST WEB</title>
-  <style>
+  <style>.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.memory-card {
+  width: 60px;
+  height: 60px;
+  font-size: 2em;
+  background-color: #fff8dc;
+  border: 2px solid #ff69b4;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+}
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -73,7 +91,18 @@
 .game-section {
   background: linear-gradient(to right, #ff758c, #ff7eb3);
 }
-  </style>
+ .about-section {
+  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* fresh green to pale lime */
+} .about-section {
+  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* fresh green to pale lime */
+}
+.game-section {
+  background: linear-gradient(to right, #ffb88c, #de6262); /* peachy coral to deep coral */
+}
+.blog-section {
+  background: linear-gradient(to right, #89f7fe, #66a6ff); /* sky blue to deep blue */
+}
+</style>
 </head>
 <body>
   <audio autoplay loop>
@@ -125,7 +154,10 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
     <p id="rps-result"></p>
   </div>
 </div>
-
+<div>
+  <h3>Memory Card Game</h3>
+  <div id="memory-game" class="memory-grid"></div>
+</div>
 <!-- Simon Says -->
 <div>
   <h3>Simon Says</h3>
@@ -238,6 +270,56 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
       } else {
         document.getElementById('trivia-score').innerText = `Your score: ${score}/${triviaQuestions.length}`;
       }
-    }
-  </script></body>
+    }const emojis = ['🍓', '🍓', '🌈', '🌈', '🧁', '🧁', '🐸', '🐸', '⭐', '⭐', '🌻', '🌻', '🍄', '🍄', '💖', '💖'];
+let firstCard = null;
+let lockBoard = false;
+
+function shuffle(array) {
+  return array.sort(() => 0.5 - Math.random());
+}
+
+function drawMemoryGame() {
+  const game = document.getElementById("memory-game");
+  const cards = shuffle([...emojis]);
+  game.innerHTML = '';
+
+  cards.forEach((emoji, index) => {
+    const card = document.createElement("div");
+    card.classList.add("memory-card");
+    card.dataset.emoji = emoji;
+    card.dataset.index = index;
+    card.textContent = '❔';
+
+    card.addEventListener("click", function () {
+      if (lockBoard || card.classList.contains("matched") || card === firstCard) return;
+
+      card.textContent = emoji;
+
+      if (!firstCard) {
+        firstCard = card;
+        return;
+      }
+
+      if (firstCard.dataset.emoji === emoji) {
+        firstCard.classList.add("matched");
+        card.classList.add("matched");
+        firstCard = null;
+      } else {
+        lockBoard = true;
+        setTimeout(() => {
+          firstCard.textContent = '❔';
+          card.textContent = '❔';
+          firstCard = null;
+          lockBoard = false;
+        }, 800);
+      }
+    });
+
+    game.appendChild(card);
+  });
+}
+
+drawMemoryGame();
+  </script>
+  </body>
 </html>
