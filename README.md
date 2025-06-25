@@ -36,13 +36,14 @@
   color: #222;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
-
-#myself .curved-block {
-  background: linear-gradient(to right, #ffea00, #76ff03);
-  padding: 30px;
-  border-radius: 30px;
-  color: #222;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+#myself {
+  background: repeating-linear-gradient(
+    45deg,
+    #a1ffce,
+    #a1ffce 20px,
+    #faffd1 20px,
+    #faffd1 40px
+  );
 }
 
 /* 🔶 Optional: full section background color too */
@@ -165,21 +166,14 @@
   #home {
   background: linear-gradient(to bottom right, #FFD1DC, #FFE4E1);
 }
+#games {
+  background: url('https://www.transparenttextures.com/patterns/bright-squares.png'), linear-gradient(to right, #00f260, #0575e6);
+  background-blend-mode: overlay;
+  color: white;
+}
+
 #about {
-  background: linear-gradient(to bottom right, #B0E0E6, #AFEEEE);
-}
-#myself {
-  background: linear-gradient(to bottom right, #D8BFD8, #E6E6FA);
-}
-.curved-block {
-  background: linear-gradient(to right, #ffecd2, #fcb69f);
-  padding: 30px;
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 90%;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background: radial-gradient(circle, #faff00, #ff6f00, #f44336);
 }
 
 
