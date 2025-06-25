@@ -121,7 +121,7 @@
 </nav>
     <section id="home">
     <h1>Welcome to Kamakshi's website</h1>
-    <p>Explore my blogs if you want to🌈</p>
+    <p>🌈 Explore my blogs....if you want to! 🌈</p>
   </section>  <section id="about">
    <div class="curved block"> <h1>About</h1>
     <p>This is a magical, colorful website full of joy, games, blogs, and a glimpse of my world ♥️😴</p>
