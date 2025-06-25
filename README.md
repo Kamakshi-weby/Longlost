@@ -181,32 +181,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-#about .curved-block {
-  background: linear-gradient(to right, #fff000, #adff2f); /* Bright yellow to green */
-  padding: 30px;
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  color: #222; /* Dark text for good contrast */
-  max-width: 90%;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
-#myself .curved-block {
-  background: linear-gradient(to right, #ffea00, #76ff03); /* Warm yellow to neon green */
-  padding: 30px;
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  color: #222;
-  max-width: 90%;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-#about {
-  background: #fff710;
-}
 
 
 </style>
