@@ -82,14 +82,6 @@
   font-size: 1.5em;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-.blogs-block {
-  background-color: #b3e5fc; /* sky blue */
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
-}
 
 .about-section {
   background-color: #fff176; /* warm yellow */
