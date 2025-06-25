@@ -139,8 +139,8 @@
   </section> <section class="about-block">
   <h2>About</h2>
   <p>This website is created with love and sparkles ✨ to showcase my thoughts, hobbies, and a few fun games. I hope you enjoy the vibe!</p>
-  </section><section id="about">
-    <section id="blogs" class="blogs-block">
+  </section><section id="about"></section>
+    <section id="blogs" class="blogs-block"></section>
 <section id="games" class="games-block">
     <h2> Me:) </h2>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Image" class="about-img">
