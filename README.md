@@ -90,17 +90,17 @@
   margin: 20px;
   box-shadow: 0 5px 15px rgba(255, 200, 0, 0.3);
 }
+
+
 .blogs-block {
   background-color: #ffffff;
-  border: 3px dashed #f48fb1; /* light pink border */
+  border: 3px dashed #f48fb1;
   border-radius: 25px;
   padding: 25px;
-  margin: 20px auto;
+  margin: 30px auto;
   max-width: 90%;
-  box-shadow: 0 6px 15px rgba(244, 143, 177, 0.2); /* soft pink glow */
+  box-shadow: 0 6px 15px rgba(244, 143, 177, 0.2);
 }
-
-
 .home-block {
   background-color: #fff9c4; /* soft sunny yellow */
   border-radius: 20px;
@@ -116,14 +116,14 @@
   max-width: 90%;
   box-shadow: 0 4px 15px rgba(186, 104, 200, 0.3);
 }
-
 .games-block {
-  background-color: #c8e6c9;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
+  background-color: #e1f5fe; /* soft blue */
+  border: 3px dashed #64b5f6; /* baby blue border */
+  border-radius: 25px;
+  padding: 25px;
+  margin: 30px auto;
   max-width: 90%;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+  box-shadow: 0 6px 15px rgba(100, 181, 246, 0.2);
 }
 </style>
 </head>
@@ -140,8 +140,8 @@
   <h2>About</h2>
   <p>This website is created with love and sparkles ✨ to showcase my thoughts, hobbies, and a few fun games. I hope you enjoy the vibe!</p>
   </section><section id="about"></section>
-    <section id="blogs" class="blogs-block"></section>
-<section id="games" class="games-block">
+    <section id="blogs" class="blogs-block">
+
     <h2> Me:) </h2>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Image" class="about-img">
     <p>🧚‍♀️Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. About myself I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!🌸</p>
@@ -154,6 +154,7 @@
 23/06/2025</p>
     </div>
     <div>
+
       <h3>BLOG 2🎨</h3>
       <p> I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
 
@@ -188,6 +189,8 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
   <h3>Memory Card Game</h3>
   <div id="memory-game" class="memory-grid"></div>
 </div>
+    </section>
+    <section id="games" class="games-block">
 <!-- Simon Says -->
 <div>
   <h3>Simon Says</h3>
@@ -196,7 +199,7 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
   <button onclick="startSimon()">Start Simon Game</button>
 </div>
 
-
+</section>
 <!-- Bollywood Trivia -->
 <div>
   <h3>Bollywood Trivia</h3>
