@@ -1,17 +1,10 @@
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE LOST WEB</title>
-  <style>.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 60px);
-  gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.memory-card {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAMAKSHI'S WEBSITE</title> 
+  <style>
+  memory-card {
   width: 60px;
   height: 60px;
   font-size: 2em;
@@ -22,129 +15,67 @@
   line-height: 60px;
   cursor: pointer;
 }
+  
     body {
-      margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
-      color: #333;
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #fff0f5;
-      padding: 20px;
-      text-align: center;
-      font-size: 2em;
-      color: #8e44ad;
+      margin: 0;
+      padding: 0;
+      background: #fdf6fb;
     }
     section {
-      padding: 40px 20px;
+      padding: 30px 20px;
+      margin: 20px auto;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 800px;
     }
-.about-img {
-  width: 80px !important;
-  height: 80px !important;
-  object-fit: cover;
-  border: 3px dashed #ffb6c1;
-  border-radius: 50%;
-  display: block;
-  margin: 10px auto;
-}
-
-    h2 {
-      color: #6a0dad;
+    #home {
+      background-color: #fff3cd;
+      border: 2px dashed #ffc107;
     }
-    .game-area button {
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 16px;
-      border-radius: 10px;
-      background: #ffe0f0;
-      border: 2px solid #da70d6;
-      cursor: pointer;
+    #about {
+      background-color: #e1bee7;
+      border: 2px dashed #ab47bc;
     }
-    canvas {
+    #myself {
+      background-color: #c8e6c9;
+      border: 2px dashed #66bb6a;
+    }
+    #blogs {
+      background-color: #ffffff;
+      border: 2px dashed #f48fb1;
+    }
+    #games {
+      background-color: #d1c4e9;
+      border: 2px dashed #7e57c2;
+    }
+    .game-box {
+      background-color: #fff;
+      border: 2px dashed #ccc;
+      padding: 15px;
+      border-radius: 15px;
+      margin: 15px 0;
+    }
+    .blue { background-color: #e3f2fd; border-color: #42a5f5; }
+    .pink { background-color: #fce4ec; border-color: #ec407a; }
+    .green { background-color: #e8f5e9; border-color: #66bb6a; }
+    .purple { background-color: #ede7f6; border-color: #9575cd; }
+    img.about-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
       display: block;
       margin: 10px auto;
-      background: #fff8dc;
+      border: 3px solid #ffb6c1;
     }
-    @media (max-width: 450px) {
-      header {
-        font-size: 1.5em;
-      }
+    h2, h3 {
+      text-align: center;
+      color: #6a1b9a;
     }
-    .welcome-section {
-  background-color: #ce93d8; /* Light Purple */
-  color: white;
-  padding: 40px 20px;
-  margin: 20px;
-  border-radius: 30px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(150, 50, 200, 0.3);
-  font-size: 1.5em;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-}
-.about-section {
-  background-color: #fff176; /* warm yellow */
-  border-radius: 30px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 5px 15px rgba(255, 200, 0, 0.3);
-}
-.blogs-block {
-  background-color: #ffffff;
-  border: 3px dashed #f48fb1;
-  border-radius: 25px;
-  padding: 25px;
-  margin: 30px auto;
-  max-width: 90%;
-  box-shadow: 0 6px 15px rgba(244, 143, 177, 0.2);
-}
-.home-block {
-  background-color: #fff9c4; /* soft sunny yellow */
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 15px rgba(255, 235, 59, 0.3);
-}.about-block {
-  background-color: #e1bee7; /* light lavender */
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 15px rgba(186, 104, 200, 0.3);
-}
-.games-block {
-  background-color: #e1f5fe; /* soft blue */
-  border: 3px dashed #64b5f6; /* baby blue border */
-  border-radius: 25px;
-  padding: 25px;
-  margin: 30px auto;
-  max-width: 90%;
-  box-shadow: 0 6px 15px rgba(100, 181, 246, 0.2);
-}
-.game-box {
-  background-color: #fce4ec; /* light pink by default */
-  border: 2px dashed #ec407a;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.1);
-}
-.game-box.blue {
-  background-color: #e3f2fd;
-  border: 2px dashed #42a5f5;
-}
-.game-box.green {
-  background-color: #e8f5e9;
-  border: 2px dashed #66bb6a;
-}
-.game-box.purple {
-  background-color: #ede7f6;
-  border: 2px dashed #9575cd;
-}
-</style>
+  </style>
 </head>
+
+    
 <body>
   <audio autoplay loop>
     <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_93cb55b9b5.mp3" type="audio/mpeg">
