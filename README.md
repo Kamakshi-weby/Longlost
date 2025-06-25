@@ -31,11 +31,6 @@
   margin: 10px auto;
 }
 
-    .blog-img {
-      width: 100%;
-      border-radius: 15px;
-      margin: 10px 0;
-    }
     h2 {
       color: #6a0dad;
     }
@@ -53,7 +48,7 @@
       margin: 10px auto;
       background: #fff8dc;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 450px) {
       header {
         font-size: 1.5em;
       }
