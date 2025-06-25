@@ -22,7 +22,7 @@
       padding: 40px 20px;
     }
     .about-img {
-      max-width: 150px;
+      max-width: 60px;
       border: 5px dashed #ffb6c1;
       border-radius: 20px;
       display: block;
