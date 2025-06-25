@@ -136,8 +136,7 @@
       that I’m the flaw, but no, no, no— I’m just a marionette, strings pulled for their delight, 
       yet I’ve grown; perhaps my heart remains a timid child, screaming silently, longing to cry,
       longing to be whole, and still I know, the mirror reflects the problem within me, cause yes! the problem is me.....
-
-23/06/2025</pre>
+      23/06/2025</pre>
     <h2>Blog 2 ♥️</h2>
     <pre>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
 
