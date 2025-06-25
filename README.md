@@ -4,6 +4,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cool Pastel Website</title>
   <style>
+    /* Mobile responsiveness */
+@media (max-width: 600px) {
+  section {
+    margin: 1rem;
+    padding: 0.8rem;
+  }
+  nav a {
+    display: block;
+    margin: 8px 0;
+    font-size: 18px;
+  }
+  .memory-card { width: 80px; height: 80px; line-height: 80px; font-size: 1.5em; }
+  canvas { width: 100%; max-width: 300px; height: auto; }
+}
     .cute-border {
   width: 120px;
   height: auto;
@@ -84,8 +98,14 @@ animation: gradientMove 15s ease infinite;
 }
   </style>
 </head>
-<body><header>
-  <h1 class="sparkle" style="color: #ff69b4;">
+<body>
+  <iframe
+  width="0" height="0" style="display:none"
+  src="https://www.youtube.com/embed/ZRL_XNfKQKY?autoplay=1&loop=1&playlist=ZRL_XNfKQKY"
+  frameborder="0" allow="autoplay"
+  id="bgMusicFrame"
+></iframe>
+<button id="muteBtn" style="position:relative; z-index:10;">🔊 Mute Music</button><head></head>
   ✨ Welcome to THE LOST WORLD ✨</h1>
   <nav>
     <a href="#about">About</a>
@@ -178,6 +198,13 @@ So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy he
   function startSnakeGame() {
     document.getElementById("gameContainer").innerHTML = '<p>🐍 Snake game coming soon!</p>';
   } 
-  
+const btn = document.getElementById('muteBtn');
+const iframe = document.getElementById('bgMusicFrame');
+let muted = false;
+btn.onclick = () => {
+  muted = !muted;
+  iframe.src = `https://www.youtube.com/embed/ZRL_XNfKQKY?autoplay=1&loop=1&playlist=ZRL_XNfKQKY&mute=${muted ? 1 : 0}`;
+  btn.textContent = muted ? '🔇 Unmute Music' : '🔊 Mute Music';
+};  
 </script></body>
 </html>
