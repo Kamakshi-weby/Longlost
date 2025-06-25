@@ -4,38 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE LOST WEB</title>
   <style>
-    
-.game-block {
-  width: 100%;
-  max-width: 600px;
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
 
-@media screen and (max-width: 768px) {
-  .game-block {
-    padding: 15px;
-  }
-
-  canvas, iframe, .game-block > div {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: auto;
-  }
-}
-section {
-  padding: 40px 20px;
-  box-sizing: border-box;
-}
-
-h1, h2 {
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 20px;
-}
     /* 🔶 Bright backgrounds for About & Myself curved blocks */
 #about .curved-block {
   background: linear-gradient(to right, #fff000, #adff2f);
@@ -64,28 +33,7 @@ h1, h2 {
 
 /* 🔷 Game blocks responsive fix */
 #games .game-block {
-  background: white;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 25px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  max-width: 800px;
-  width: 90%;
-  overflow-x: auto;
-}
 
-@media (max-width: 768px) {
-  #games .game-block {
-    width: 95%;
-    padding: 15px;
-    margin: 15px auto;
-  }
-
-  canvas, iframe {
-    width: 100% !important;
-    height: auto !important;
-  }
-} 
     .navbar {
   position: sticky;
   top: 0;
