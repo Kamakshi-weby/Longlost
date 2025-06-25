@@ -21,12 +21,12 @@
     section {
       padding: 40px 20px;
     }
-    .about-img {
-  width: 50px !important;
-  height: 50px !important;
-  object-fit: cover;
+.about-img {
+  width: 60px; /* fixed small size */
+  height: 60px; /* keep it proportional or match your style */
+  object-fit: cover; /* crops it nicely if it's not square */
   border: 3px dashed #ffb6c1;
-  border-radius: 50%;
+  border-radius: 50%; /* makes it a circle */
   display: block;
   margin: 10px auto;
 }
