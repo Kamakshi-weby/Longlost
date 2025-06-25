@@ -107,14 +107,28 @@
 }
 
 
-
-.about-block {
+.home-block {
+  background-color: #fff9c4; /* soft sunny yellow */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(255, 235, 59, 0.3);
+}.about-block {
   background-color: #e1bee7; /* light lavender */
   border-radius: 20px;
   padding: 20px;
   margin: 20px auto;
   max-width: 90%;
   box-shadow: 0 4px 15px rgba(186, 104, 200, 0.3);
+}
+.games-block {
+  background-color: #ffe0e0; /* peachy pink */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(255, 99, 132, 0.2);
 }
 .games-block {
   background-color: #ffe0e0; /* soft peach pink */
@@ -138,7 +152,8 @@
   </section> <section class="about-block">
   <h2>About</h2>
   <p>This website is created with love and sparkles ✨ to showcase my thoughts, hobbies, and a few fun games. I hope you enjoy the vibe!</p>
-  </section><section id="about"><section id="blogs" class="blog-section">
+  </section><section id="about">
+    <section id="blogs" class="blogs-block">
 <section id="games" class="games-block">
     <h2> Me:) </h2>
     <img src="59ADAB5B393E06E454CAEEFBABF1AC83D49C1B14" alt="My Image" class="about-img">
