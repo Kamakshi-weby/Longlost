@@ -1,487 +1,277 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE LOST WEB</title>
-  <style>
-    body {
-  background: white;
-}
-    .tic-tac-toe {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.tic-cell {
-  width: 100px;
-  height: 100px;
-  background: #fff;
-  border: 3px solid #4c1d95;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  font-weight: bold;
-  cursor: pointer;
-}
-.tic-cell:hover {
-  background: #ede9fe;
-}
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #fcd34d, #f9a8d4, #a5f3fc);
-      background-size: 400% 400%;
-      animation: gradientMove 15s ease infinite;
-      color: #333;
-    }
-    @keyframes gradientMove {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-    nav {
-      background: #7c3aed;
-      display: flex;
-      justify-content: space-around;
-      padding: 1em;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      color: white;
-    }
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 0.5em 1em;
-      border-radius: 12px;
-    }
-    nav a:hover {
-      background: #a78bfa;
-    }
-    section {
-      padding: 2em;
-      border-bottom: 2px dashed #f3f4f6;
-    }
-    h2 {
-      color: #4c1d95;
-    }
-    .game-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      justify-content: center;
-    }
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 1.5em;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      flex: 1 1 300px;
-      min-height: 300px;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    button {
-      background-color: #a5f3fc;
-      border: none;
-      padding: 0.5em 1em;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 0.2em;
-      transition: transform 0.2s ease;
-    }
-    button:hover {
-      background-color: #67e8f9;
-      transform: scale(1.1);
-    }
-    #ttt-board button {
-      width: 50px;
-      height: 50px;
-      font-size: 1.5em;
-    }
-    #memory-board {
-      display: grid;
-      grid-template-columns: repeat(4, 60px);
-      gap: 10px;
-      justify-content: center;
-    }
-    #simon-buttons button {
-      width: 80px;
-      height: 40px;
-      color: white;
-      font-weight: bold;
-    }
-    .flip-card {
-      width: 60px;
-      height: 60px;
-      perspective: 1000px;
-    }
-    .flip-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-    .flipped .flip-inner {
-      transform: rotateY(180deg);
-    }
-    .flip-front, .flip-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      border-radius: 8px;
-      background: #fef9c3;
-    }
-    .flip-back {
-      transform: rotateY(180deg);
-    }
-#blogs {
-  background: linear-gradient(135deg, #a5b4fc, #fca5a5); /* purple to pink */
-  border-radius: 30px;
-  padding: 2em;
-  margin: 2em;
-  line-height: 1.6;
-  color: #222;
-}
+    
+import React, { useState } from "react";
 
-.blog-post {
-  background: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2em;
-  padding: 1.5em;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}/* Curved & colorful section backgrounds */
-#home {
-  background: linear-gradient(135deg, #fcd34d, #fbbf24); /* Golden */
-  border-radius: 30px;
-  padding: 2em;
-  margin: 2em;
-}
+// Plant Deficiency Diagnoser - Single-file React component
+// Tailwind CSS classes used for layout and styling (no external CSS required here,
+// but the parent project should include Tailwind). This component is a starting
+// point: it performs symptom-based rule matching locally and can optionally
+// call the Plant.id API for image-based identification.
 
-#about {
-  background: linear-gradient(135deg, #6ee7b7, #3b82f6); /* Mint to blue */
-  border-radius: 30px;
-  padding: 2em;
-  margin: 2em;
-}
+// ====== CONFIG ======
+// If you have a Plant.id API key, paste it here. If empty, the app will only use
+// the local symptom matcher. To get an API key: https://plant.id (or any other
+// plant-identification service). Remember: do NOT commit secret keys to public
+// repos. For production, proxy this key via a server.
+const PLANT_ID_API_KEY = ""; // <-- Paste your Plant.id API key here (or leave blank)
 
-#me {
-  background: linear-gradient(135deg, #f472b6, #e879f9); /* Pink to violet */
-  border-radius: 30px;
-  padding: 2em;
-  margin: 2em;
-}
+export default function PlantDiagnoser() {
+  const [imageFile, setImageFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState("");
+  const [symptomsText, setSymptomsText] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState(null);
+  const [error, setError] = useState("");
 
-#blogs {
-  background: linear-gradient(135deg, #a5b4fc, #fca5a5); /* Soft purple to peach */
-  border-radius: 30px;
-  padding: 2em;
-  margin: 2em;
-}
+  // Local symptom-rule engine: simple keyword matching. This is intentionally
+  // conservative and meant as a fallback/demo. Expand rules as you test with real plants.
+  function symptomRuleMatch(text) {
+    const t = text.toLowerCase();
+    const matches = [];
 
-#games {
-  background: linear-gradient(135deg, #fcd34d, #a78bfa); /* Golden to purple */
-  border-radius: 30px;
-  padding: 2em;
-  margin: 2em;
-}  
-.poem {
-  background: linear-gradient(135deg, #fdf6e3, #fce7f3); /* soft yellow to pink */
-  padding: 1.5em;
-  margin-top: 1em;
-  border-left: 6px solid #a78bfa;
-  border-radius: 20px;
-  font-style: italic;
-  white-space: pre-wrap;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-</style>
-</head>
-<body>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#me">Me</a>
-    <a href="#blogs">Blogs</a>
-    <a href="#games">Games</a>
-  </nav>
-  <section id="home">
-    <h2>Welcome 🌸</h2>
-    <p>This is my cozy corner on the internet where I blog, game, and vibe. You're invited!</p>
-  </section>
-  <section id="about">
-    <h2>About</h2>
-    <p>This website is where I pour my heart out — with blogs and games, all made by me!</p>
-  </section>
-  <section id="me">
-    <h2>About Me</h2>
-    <img src="Screenshot_2025-06-25-01-50-38-68.jpg" alt="Kamakshi" width="150" style="border-radius: 50%;">
-    <p>Hi there! I'm Kamakshi and this is my first time creating a website where I blog and maybe live. I'm 18 and I'm very much interested in gaming and doing nothing but also a little bit of coding. I love making friends, and in person I maybe an extrovert but I'm not much confident if you ask me but that's ok. That's how life works right!?. I might not be perfect and neither is this website but I hope y'all like it 🙂. Thanks for being here. Toddles!</p>
-  </section>
-  <section id="blogs">
-    <h2>Blog 1 ♥️</h2><div class="blog-post"><div class="poem">
-    <pre> Its been a rough day and while blaming god for everything that's happening in my life
- I realised what the actual problem was and so here I'm discussing about THE REAL PROBLEM....
- with this poem-----> 
- There's nothing more important to me than to be... to live...to feel 
- but still the question echoes: is it truly necessary?
- Alone without love, no tender care to cradle my heart, seeking souls to halt this solitude,
- but shadows chase me still, like demons dancing in the dark of my restless mind.
- The world once sparkled bright in solitary glow, but now I'm encircled by strangers whose hearts are void,
- each glance a dagger, every word a wound, they bury my hope deeper than any weapon can wound. 
- Innocence was my shroud, believing in binds of closeness, convincing myself it’s me, that I’m the flaw, 
- but no, no, no— I’m just a marionette, strings pulled for their delight, yet I’ve grown; perhaps my heart remains a timid    child,
- screaming silently, longing to cry, longing to be whole, and still I know, the mirror reflects the problem within me,
- cause yes! the problem is me.....
+    if (!t || t.trim().length === 0) return matches;
 
- 23/06/2025</pre></pre></div></div>
-    <h2>Blog 2 ♥️</h2><div class="blog-post"><div class="poem">
-    <pre>I've been realising lately that everything I do will never be enough or maybe...... I'M NOT ACTUALLY DOING ENOUGH------>
-
-Crying in silence, running through pain, Screaming inside like a voice in the rain. I've given my all, done more than I could, Yet still I'm unseen, misunderstood.
-
-For those that I love, I’ve carried the weight, Faced every storm, surrendered to fate. But they look at me with eyes so cold, And I’m lost in stories I've already told.
-
-Lost in the past, in shadows I flee, Trapped in a place I never wished to be. I wonder aloud—what do I desire? When did my soul lose its fire?
-
-I’ve become someone I never planned, A stranger shaped by unseen hands. Not cruel, not heartless, not a foe— Just tired, just broken, moving slow.
-
-They say I’m wrong, they think I’m weak, But maybe I’m just too soft to speak. Maybe my love was never enough To heal the cracks, to smooth the rough.
-
-I’ve searched within, I’ve tried my best, But some battles don’t end in rest. Now I stand with nothing left to prove, Just the ache of all I couldn’t move.
-
-So if I seem like I’m drifting apart, Know it’s not hate—it’s a heavy heart. I gave my all, yet here I stand, Still wondering if I was ever enough... in anyone’s hands......
-
-24/06/2025</pre></div></div>
-  </section>
-  <section id="games">
-    <h2>Games 🎮</h2>
-    <div class="game-grid">
-      <div class="card">
-        <h3>Tic Tac Toe</h3>
-        <div id="ttt-board"></div>
-        <button onclick="tttRestart()">Restart</button>
-      </div>
-      <div class="card">
-        <h3>Memory Game</h3>
-        <div id="memory-board"></div>
-        <button onclick="startMemoryGame()">Restart</button>
-      </div>
-      <div class="card">
-        <h3>Simon Says</h3>
-        <p id="simon-msg"></p>
-        <div id="simon-buttons"></div>
-        <button onclick="startSimon()">Start Game</button>
-      </div>
-      <div class="card">
-        <h3>Bollywood Trivia</h3>
-        <div id="trivia"></div>
-      </div>
-    </div>
-  </section>
-  <audio id="flip-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_aab9ac687e.mp3"></audio>
-  <script>
-    // TIC TAC TOE
-    let tttBoard = Array(9).fill('');
-    let tttCurrent = 'X';
-    const tttContainer = document.getElementById('ttt-board');
-    function renderTTT() {
-      tttContainer.innerHTML = '';
-      tttBoard.forEach((val, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = val;
-        btn.onclick = () => {
-          if (!tttBoard[i]) {
-            tttBoard[i] = tttCurrent;
-            tttCurrent = tttCurrent === 'X' ? 'O' : 'X';
-            renderTTT();
-            const win = checkWin();
-            if (win) alert(`${win} wins!`);
-          }
-        };
-        tttContainer.appendChild(btn);
+    if (/(yellow|chlorosis|pale).*(between|between veins|veins)/.test(t) || /interveinal yellow/.test(t)) {
+      matches.push({
+        name: "Iron deficiency (interveinal chlorosis)",
+        confidence: 0.6,
+        advice: "Check soil pH (often too high), consider iron chelate foliar spray or correct pH."
       });
     }
-    function tttRestart() {
-      tttBoard = Array(9).fill('');
-      tttCurrent = 'X';
-      renderTTT();
+
+    if (/(overall yellow|pale leaves|yellow leaves).*(older leaves|older)/.test(t) || /(nitrogen|nitrogen deficiency)/.test(t)) {
+      matches.push({
+        name: "Nitrogen deficiency",
+        confidence: 0.7,
+        advice: "Apply a balanced nitrogen-rich fertilizer; older leaves yellow first."
+      });
     }
-    function checkWin() {
-      const lines = [
-        [0,1,2],[3,4,5],[6,7,8],
-        [0,3,6],[1,4,7],[2,5,8],
-        [0,4,8],[2,4,6]
-      ];
-      for (const [a,b,c] of lines) {
-        if (tttBoard[a] && tttBoard[a] === tttBoard[b] && tttBoard[a] === tttBoard[c]) return tttBoard[a];
-      }
-      return null;
+
+    if (/(brown edges|leaf edges brown|scorched edges)/.test(t) || /(salt burn|too much fertilizer)/.test(t)) {
+      matches.push({
+        name: "Salt / fertilizer burn or drought stress",
+        confidence: 0.65,
+        advice: "Flush soil with water, check recent fertilization; reduce fertilizer and ensure even watering."
+      });
     }
-    renderTTT();// MEMORY GAME
-let memoryEmojis = ['🐱','🐶','🐵','🐸','🐼','🐷','🐯','🐰'];
-let memoryCards = [];
-let flipped = [], matched = [];
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+
+    if (/(brown spots|necrotic spots|spots on leaves)/.test(t) || /(fungal|blight|rust|powdery mildew)/.test(t)) {
+      matches.push({
+        name: "Possible fungal or bacterial disease",
+        confidence: 0.7,
+        advice: "Remove affected leaves, improve air circulation, consider fungicide if necessary. Identify exact pathogen for targeted treatment."
+      });
+    }
+
+    if (/(curl|droop|wilting|wilted)/.test(t) || /(root rot|overwater)/.test(t)) {
+      matches.push({
+        name: "Water stress or root problem (root rot/underwatering)",
+        confidence: 0.7,
+        advice: "Check soil moisture, roots; reduce overwatering or water more consistently. Repot if root rot suspected."
+      });
+    }
+
+    if (/(purple stems|reddish leaves|phosphorus)/.test(t)) {
+      matches.push({
+        name: "Possible phosphorus deficiency",
+        confidence: 0.5,
+        advice: "Use a fertilizer with phosphorus and check soil temperature (cold soils limit uptake)."
+      });
+    }
+
+    if (matches.length === 0) {
+      matches.push({
+        name: "Not sure from text",
+        confidence: 0.2,
+        advice: "Try uploading a clear photo (top-side and underside of leaves) or add more symptom details (age of affected leaves, pattern, progression)."
+      });
+    }
+
+    return matches;
   }
-  return array;
-}
-function startMemoryGame() {
-  memoryCards = shuffle([...memoryEmojis, ...memoryEmojis]);
-  flipped = [];
-  matched = [];
-  renderMemory();
-}
-function renderMemory() {
-  const board = document.getElementById('memory-board');
-  board.innerHTML = '';
-  memoryCards.forEach((val, i) => {
-    const card = document.createElement('div');
-    card.className = 'flip-card';
-    const inner = document.createElement('div');
-    inner.className = 'flip-inner';
-    if (flipped.includes(i) || matched.includes(i)) card.classList.add('flipped');
 
-    const front = document.createElement('div');
-    front.className = 'flip-front';
-    front.textContent = '❓';
+  async function analyzeBySymptoms() {
+    setError("");
+    setResults(null);
+    setLoading(true);
+    try {
+      const local = symptomRuleMatch(symptomsText);
+      setResults({source: "symptom-text", diagnoses: local});
+    } catch (e) {
+      setError(String(e));
+    } finally {
+      setLoading(false);
+    }
+  }
 
-    const back = document.createElement('div');
-    back.className = 'flip-back';
-    back.textContent = val;
+  async function analyzeImage() {
+    setError("");
+    setResults(null);
+    if (!imageFile) {
+      setError("Please upload an image first.");
+      return;
+    }
 
-    inner.appendChild(front);
-    inner.appendChild(back);
-    card.appendChild(inner);
-
-    card.onclick = () => {
-      if (flipped.length < 2 && !flipped.includes(i) && !matched.includes(i)) {
-        flipped.push(i);
-        document.getElementById('flip-sound').play();
-        renderMemory();
-        if (flipped.length === 2) {
-          setTimeout(() => {
-            if (memoryCards[flipped[0]] === memoryCards[flipped[1]]) {
-              matched.push(...flipped);
+    setLoading(true);
+    try {
+      if (!PLANT_ID_API_KEY) {
+        // No API key: return a friendly message and show local heuristic
+        setResults({
+          source: "local-fallback",
+          diagnoses: [
+            {
+              name: "No image analysis (no API key)",
+              confidence: 0.1,
+              advice:
+                "You can paste a Plant.id (or other) API key at the top of the component to enable cloud image analysis. Meanwhile, try the text-symptom analyser."
             }
-            flipped = [];
-            renderMemory();
-            if (matched.length === memoryCards.length) {
-              setTimeout(() => alert('🎉 You matched all the animals!'), 200);
-            }
-          }, 1000);
-        }
+          ]
+        });
+        setLoading(false);
+        return;
       }
-    };
-    board.appendChild(card);
-  });
-}
-startMemoryGame();
 
-// SIMON SAYS
-let simonSeq = [], simonInput = [];
-const colors = ['red','green','blue','yellow'];
-const msg = document.getElementById('simon-msg');
-function startSimon() {
-  simonSeq.push(colors[Math.floor(Math.random()*4)]);
-  simonInput = [];
-  showSimon();
-}
-function showSimon() {
-  const container = document.getElementById('simon-buttons');
-  container.innerHTML = '';
-  colors.forEach(c => {
-    const btn = document.createElement('button');
-    btn.style.background = c;
-    btn.textContent = c;
-    btn.onclick = () => handleSimon(c);
-    container.appendChild(btn);
-  });
-  msg.textContent = `Repeat this pattern: ${simonSeq.join(' → ')}`;
-}
-function handleSimon(c) {
-  simonInput.push(c);
-  if (simonInput[simonInput.length-1] !== simonSeq[simonInput.length-1]) {
-    msg.textContent = 'Oops! Wrong move. Game Over 💥';
-    simonSeq = [];
-  } else if (simonInput.length === simonSeq.length) {
-    msg.textContent = 'Yay! You got it! ✨';
-    setTimeout(startSimon, 1000);
+      // Example call to Plant.id v2 detect endpoint. Production: proxy the key via a backend.
+      // For usage details see: https://web.plant.id/api-docs (API changes over time; check docs)
+
+      const form = new FormData();
+      form.append("api_key", PLANT_ID_API_KEY);
+      form.append("organs", JSON.stringify(["leaf"]));
+      form.append("images", imageFile);
+
+      const resp = await fetch("https://api.plant.id/v2/identify", {
+        method: "POST",
+        body: form
+      });
+
+      if (!resp.ok) {
+        const txt = await resp.text();
+        throw new Error(`Plant.id API error: ${resp.status} ${txt}`);
+      }
+
+      const data = await resp.json();
+
+      // Plant.id returns suggestions; we lightly convert them for display. Structure
+      // may change depending on API version.
+      const diagnoses = (data?.suggestions || []).map((s) => ({
+        name: s?.plant?.common_names?.[0] || s?.plant?.scientific_name || s?.plant_name || s?.name || "Unknown",
+        confidence: s?.probability ?? s?.score ?? 0,
+        details: s
+      }));
+
+      if (diagnoses.length === 0) {
+        diagnoses.push({name: "No confident identification", confidence: 0});
+      }
+
+      setResults({source: "plant.id", raw: data, diagnoses});
+    } catch (e) {
+      setError(String(e));
+    } finally {
+      setLoading(false);
+    }
   }
-}
 
-// BOLLYWOOD TRIVIA
-const triviaQ = [
-  { q: 'Who is the King of Bollywood?', o: ['Salman', 'SRK', 'Aamir', 'Ranbir'], a: 1 },
-  { q: 'Which movie won Filmfare 2023?', o: ['RRR', 'Pathaan', 'Jawan', 'Gully Boy'], a: 2 },
-  { q: 'Which actress is called "Desi Girl"?', o: ['Katrina', 'Priyanka', 'Alia', 'Deepika'], a: 1 },
-  { q: 'Who played the role of Munna Bhai?', o: ['Aamir Khan', 'Salman Khan', 'Sanjay Dutt', 'Shah Rukh Khan'], a: 2 },
-  { q: 'Which movie has the song "Kal Ho Naa Ho"?', o: ['Veer-Zaara', 'Kal Ho Naa Ho', 'Kabhi Khushi Kabhie Gham', 'Dil Se'], a: 1 },
-  { q: 'Which actor starred in "Dangal"?', o: ['Salman Khan', 'Akshay Kumar', 'Aamir Khan', 'Ajay Devgn'], a: 2 },
-  { q: 'Who directed "Kabir Singh"?', o: ['Sandeep Vanga', 'Karan Johar', 'Rohit Shetty', 'Zoya Akhtar'], a: 0 },
-  { q: 'What is the real name of Govinda?', o: ['Ravi Kapoor', 'Govind Ahuja', 'Sunil Shetty', 'Rakesh Roshan'], a: 1 },
-  { q: 'Which film is based on hockey?', o: ['Chak De India', 'Dangal', 'Lagaan', 'Mary Kom'], a: 0 },
-  { q: 'Who played Bajirao in "Bajirao Mastani"?', o: ['Ranbir Kapoor', 'Hrithik Roshan', 'Ranveer Singh', 'Shahid Kapoor'], a: 2 },
-  { q: 'In which year did "Sholay" release?', o: ['1975', '1980', '1982', '1970'], a: 0 },
-  { q: 'What is Katrina Kaif\'s debut movie?', o: ['Boom', 'Namastey London', 'Maine Pyaar Kyun Kiya', 'Zindagi Na Milegi Dobara'], a: 0 },
-  { q: 'Which movie has the character Geet?', o: ['Barfi!', 'Jab We Met', 'Queen', 'Tamasha'], a: 1 },
-  { q: 'Who composed the music for "Dil Se"?', o: ['Pritam', 'Shankar-Ehsaan-Loy', 'A.R. Rahman', 'Vishal-Shekhar'], a: 2 },
-  { q: 'Who is called Mr. Perfectionist in Bollywood?', o: ['Shah Rukh Khan', 'Hrithik Roshan', 'Aamir Khan', 'Saif Ali Khan'], a: 2 },
-  { q: 'Which movie features the song "Tujh Mein Rab Dikhta Hai"?', o: ['Rab Ne Bana Di Jodi', 'Dilwale', 'Jab Tak Hai Jaan', 'Fan'], a: 0 },
-  { q: 'What is the profession of Shahid in "Kabir Singh"?', o: ['Lawyer', 'Doctor', 'Engineer', 'Singer'], a: 1 },
-  { q: 'Which actor was in "Andaz Apna Apna"?', o: ['Govinda', 'Aamir & Salman', 'Ajay Devgn', 'Saif & SRK'], a: 1 },
-  { q: 'Who played the lead in "Raazi"?', o: ['Deepika', 'Kangana', 'Alia Bhatt', 'Kareena'], a: 2 },
-  { q: 'Which movie is India\'s official entry to Oscars 2022?', o: ['RRR', 'Chhello Show', 'The Kashmir Files', 'Rocketry'], a: 1 },
-  { q: 'What is the highest-grossing Indian film ever?', o: ['PK', 'Dangal', 'Baahubali 2', 'Pathaan'], a: 2 },
-  { q: 'Who played the character of Kabir in "War"?', o: ['Tiger Shroff', 'Hrithik Roshan', 'Ranveer Singh', 'Shahid Kapoor'], a: 1 },
-  { q: 'Which film was based on surgical strikes?', o: ['Uri', 'Shershaah', 'Raazi', 'Attack'], a: 0 },
-  { q: 'Which actor is known for his dance?', o: ['Nawazuddin', 'Hrithik Roshan', 'Aamir Khan', 'Pankaj Tripathi'], a: 1 },
-  { q: 'Which actress debuted in "Student of the Year"?', o: ['Kriti Sanon', 'Kiara Advani', 'Alia Bhatt', 'Sara Ali Khan'], a: 2 },
-  { q: 'What role did Akshay play in "Toilet"?', o: ['Villain', 'Reporter', 'Social Worker', 'Husband'], a: 3 },
-  { q: 'Which movie stars SRK & Kajol in Europe?', o: ['Dilwale', 'DDLJ', 'Kabhi Khushi...', 'My Name is Khan'], a: 1 },
-  { q: 'Who is the director of "RRR"?', o: ['Rajkumar Hirani', 'Rohit Shetty', 'SS Rajamouli', 'Zoya Akhtar'], a: 2 },
-  { q: 'What does "PK" stand for in the movie?', o: ['Pakistani Kid', 'Peekay (Drunk)', 'Pintu Kumar', 'None'], a: 1 },
-  { q: 'Which movie has the line: "How\'s the Josh?"', o: ['Shershaah', 'Bhuj', 'Uri', 'Kesari'], a: 2 }
-];
-let tIndex = 0, score = 0;
-function renderTrivia() {
-  const box = document.getElementById('trivia');
-  if (tIndex >= triviaQ.length) {
-    box.innerHTML = `🎉 You scored ${score}/${triviaQ.length}`;
-    return;
+  function onFileChange(e) {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    setImageFile(f);
+    const url = URL.createObjectURL(f);
+    setPreviewUrl(url);
   }
-  const q = triviaQ[tIndex];
-  box.innerHTML = `<p>${q.q}</p>`;
-  q.o.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.textContent = opt;
-    btn.onclick = () => {
-      if (i === q.a) score++;
-      tIndex++;
-      renderTrivia();
-    };
-    box.appendChild(btn);
-  });
-}
-renderTrivia();
 
-  </script>
-</body>
-</html>
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100 p-6">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-extrabold underline mb-4">Plant Deficiency Diagnoser</h1>
+        <p className="mb-4 opacity-80">Upload a clear leaf photo or describe the symptoms and get likely causes and advice.</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-4 bg-gray-900/40 rounded-2xl shadow-lg">
+            <h2 className="text-xl font-semibold underline mb-2">1) Image-based analysis</h2>
+            <input onChange={onFileChange} accept="image/*" type="file" className="mb-3" />
+            {previewUrl && (
+              <img src={previewUrl} alt="preview" className="w-full h-48 object-contain rounded-md mb-3" />
+            )}
+            <div className="flex gap-2">
+              <button onClick={analyzeImage} className="px-4 py-2 rounded-xl bg-green-600/90 hover:bg-green-600">Analyze Image</button>
+              <button
+                onClick={() => {
+                  setImageFile(null);
+                  setPreviewUrl("");
+                }}
+                className="px-4 py-2 rounded-xl bg-gray-700/80"
+              >
+                Clear
+              </button>
+            </div>
+            <p className="mt-3 text-sm opacity-80">Note: For automated image results you must provide a Plant.id API key in the source code or run a backend proxy. Otherwise the app will use a local fallback.</p>
+          </div>
+
+          <div className="p-4 bg-gray-900/40 rounded-2xl shadow-lg">
+            <h2 className="text-xl font-semibold underline mb-2">2) Symptom text analysis</h2>
+            <textarea
+              rows={8}
+              value={symptomsText}
+              onChange={(e) => setSymptomsText(e.target.value)}
+              placeholder={`Example: "Older leaves turning yellow, veins remain green, small brown spots appear"`}
+              className="w-full p-3 rounded-xl bg-gray-800/60"
+            />
+            <div className="flex gap-2 mt-3">
+              <button onClick={analyzeBySymptoms} className="px-4 py-2 rounded-xl bg-indigo-600/90 hover:bg-indigo-600">Analyze Symptoms</button>
+              <button
+                onClick={() => setSymptomsText("")}
+                className="px-4 py-2 rounded-xl bg-gray-700/80"
+              >
+                Clear
+              </button>
+            </div>
+            <p className="mt-3 text-sm opacity-80">The text analyser is a lightweight keyword matcher — good for quick hints but not a replacement for lab or expert diagnosis.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-gray-900/40 rounded-2xl shadow-lg">
+          <h2 className="text-2xl font-semibold underline mb-3">Results</h2>
+
+          {loading && <div className="italic">Analysing…</div>}
+
+          {error && <div className="text-red-400 mb-3">Error: {error}</div>}
+
+          {results && (
+            <div>
+              <div className="mb-2 text-sm opacity-80">Source: {results.source}</div>
+              <div className="grid gap-3">
+                {results.diagnoses.map((d, i) => (
+                  <div key={i} className="p-3 bg-gray-800/60 rounded-xl border border-gray-700">
+                    <div className="flex items-baseline justify-between">
+                      <div className="font-semibold text-lg">{d.name}</div>
+                      <div className="text-sm opacity-80">Confidence: {(d.confidence ?? 0).toFixed(2)}</div>
+                    </div>
+                    {d.advice && <div className="mt-2">{d.advice}</div>}
+                    {d.details && (
+                      <details className="mt-2 text-sm opacity-80">
+                        <summary>Raw details</summary>
+                        <pre className="whitespace-pre-wrap text-xs">{JSON.stringify(d.details, null, 2)}</pre>
+                      </details>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!results && !loading && <div className="opacity-70">No results yet — try uploading an image or entering symptoms above.</div>}
+        </div>
+
+        <div className="mt-6 text-sm opacity-80">
+          <h3 className="font-semibold">Next steps & improvements</h3>
+          <ul className="list-disc ml-5">
+            <li>Add a small Node/Express backend to keep your Plant.id API key secret.</li>
+            <li>Train or fine-tune a TensorFlow / Hugging Face model for offline image inference and bundle it with TensorFlow.js.</li>
+            <li>Increase the symptom-rule database and add image pre-processing (crop, focus on leaf) for better accuracy.</li>
+            <li>Collect labeled examples to improve your model and to measure accuracy per plant species.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  );
+}
